@@ -1,7 +1,7 @@
 
-:release-month: November
-:release-year: 2025
-:release-number: 25.9
+:release-month: March
+:release-year: 2026
+:release-number: XX.X
 :prerelease-tag:
 :altiplano-release-number: 24.6, 24.12, 25.6
 :screenshot-altiplano-release-number: 24.6
@@ -9,8 +9,8 @@
 :helm-chart-name: altiplano-wnp
 :issue-number: 3
 :part-number: 3JL-08010-DCAA-PCZZA
-:app-full-name: Wholesale Network Portal
-:app-short-name: WNP
+:app-full-name: Access Cluster Campaign Manager
+:app-short-name: ACCM
 :main-base-app: Altiplano
 :vno-initials: ISP
 :inp-initials: INP
