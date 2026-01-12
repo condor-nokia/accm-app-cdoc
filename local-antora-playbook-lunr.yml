@@ -5,7 +5,7 @@ antora:
      languages: [en]
 site:
   title: Access Cluster Campaign Manager Documentation
-  start_page: WNP:ROOT:index.adoc
+  start_page: ACCM:ROOT:index.adoc
   url: https://www.nokia.com/
 git:
   ensure_git_suffix: false
