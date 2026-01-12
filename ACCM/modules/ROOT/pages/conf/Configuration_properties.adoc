@@ -5,9 +5,9 @@
 :prerelease-tag:
 :altiplano-release-number: 24.6, 24.12, 25.6
 :screenshot-altiplano-release-number: 24.6
-:chart-version: 25.9
+:chart-version: XX.X
 :helm-chart-name: altiplano-wnp
-:issue-number: 3
+:issue-number: 1
 :part-number: 3JL-08010-DCAA-PCZZA
 :app-full-name: Access Cluster Campaign Manager
 :app-short-name: ACCM

@@ -1,6 +1,6 @@
 include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
-= What's new in Release 26.3
+= What's new in Release XX.X
 
 * Introduced support for Live Collections. {app-short-name} can be configured by the {inp-initials}
 to configure period, duration and max simultaneous live collections number per {vno-initials} or globally.
