@@ -34,7 +34,7 @@ image::altiplanoHome.png[align="left"]
 . Two options can be used:
 .. All available Apps are displayed on the screen. Click over the *{app-full-name}* icon.
 +
-image::WNP_option1.png[align="left"]
+
 
 .. Click over the on the *Application menu* displayed on right top of the screen.
 +

@@ -513,7 +513,7 @@ This section allows setting specific {app-short-name} configuration used by the 
 
 |ALTIPLANO_PUBLIC_IP_LIST
 |In NAT scenarios configure this variable with the list of IPs/hostnames
-that will be used to access {app-short-name}. Refer to xref:Installation-and-Deployment-Guide:appendices/WNP_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section to know how each value impact the exposed interfaces.
+that will be used to access {app-short-name}. Refer to xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section to know how each value impact the exposed interfaces.
 |No
 |""
 |String (Each IP must be separated with “;” character)
