@@ -879,7 +879,7 @@ The {app-short-name} exposes different interfaces. Default path values for those
 * */wnp-ibn:* It is the url used to access the {app-short-name} service that acts as proxy to {main-base-app}’s Intent Based Networking interface.
 
 To get more information about the interfaces exposed by {app-short-name}, refer to
-xref:Installation-and-Deployment-Guide:appendices/WNP_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section.
+xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section.
 
 ==== {app-short-name} Provisioning (Web + Controller) module Configuration
 
@@ -914,7 +914,7 @@ Before executing the installation command make sure that
 - The correct values were configured at the *values.yaml* file. To know more details about this configuration, refer to the xref:_configuring_helm_chart[Configuring Helm chart] section.
 - At least the following values have been configured:
 * *ALTIPLANO_SERVER:* {main-base-app} IP or Hostname that the {app-short-name} uses to call the Altiplano's available services. This value must be also used to access {app-short-name}
-* *ALTIPLANO_PUBLIC_IP_LIST (Optional):* List of IPs/Hostnames apart from the configured in the ALTIPLANO_SERVER variable that will be used to access WNP (For example in NAT scenarios). Refer to xref:Installation-and-Deployment-Guide:appendices/WNP_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section to know how each value impact the exposed interfaces.
+* *ALTIPLANO_PUBLIC_IP_LIST (Optional):* List of IPs/Hostnames apart from the configured in the ALTIPLANO_SERVER variable that will be used to access WNP (For example in NAT scenarios). Refer to xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section to know how each value impact the exposed interfaces.
 * *KEYCLOAK_PORTAL_SECRET:* Client Secret of portal client. This value must be copied from "Credentials" section of the client "wnp_portal" in Keycloak.
 * *KEYCLOAK_PROXY_SECRET:* Client Secret of proxy client. This value must be copied from "Credentials" section of the client "wnp_proxy" in Keycloak.
 

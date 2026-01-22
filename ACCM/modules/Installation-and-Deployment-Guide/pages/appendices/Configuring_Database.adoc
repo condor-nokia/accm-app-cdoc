@@ -42,7 +42,7 @@ mysql -u root -p
 ----
 . CREATE USER 'app_cm'@'%' IDENTIFIED BY 'appCm@1234';
 
-. GRANT ALL PRIVILEGES ON app_wnp.* TO 'app_cm'@'%';
+. GRANT ALL PRIVILEGES ON app_cm.* TO 'app_cm'@'%';
 ----
 
 
