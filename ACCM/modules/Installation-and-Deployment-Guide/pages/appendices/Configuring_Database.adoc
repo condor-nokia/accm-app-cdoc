@@ -31,7 +31,7 @@ mysql -u root -p
 +
 [source, bash]
 ----
-. CREATE DATABASE app_wnp;
+. CREATE DATABASE app_cm;
 ----
 
 . Check if the user already exists.
@@ -40,9 +40,9 @@ mysql -u root -p
 +
 [source, bash]
 ----
-. CREATE USER 'app_wnp'@'%' IDENTIFIED BY 'appWnp@1234';
+. CREATE USER 'app_cm'@'%' IDENTIFIED BY 'appCm@1234';
 
-. GRANT ALL PRIVILEGES ON app_wnp.* TO 'app_wnp'@'%';
+. GRANT ALL PRIVILEGES ON app_wnp.* TO 'app_cm'@'%';
 ----
 
 
