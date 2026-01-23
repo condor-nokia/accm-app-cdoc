@@ -66,8 +66,8 @@ The hardware requirements for {app-full-name} initial release installation are:
 [width="99%",cols="35%,15%,15%,15%,options="header"]
 |===
 | *Service* | *vCPU* | *Memory (GB)* | *Disk (GB)*
-| REST API + UIs | 1 | 1,5 | 10
-| *TOTAL* | *7,5* | *9,5* | *70*
+| REST API + UIs | 1,5 | 2 | 10
+| *TOTAL* | *1,5* | *2* | *10*
 |===
 
 [NOTE]
