@@ -4,7 +4,7 @@
 ** xref:Purpose_of_this_Guide.adoc[Purpose of This Guide]
 ** xref:What_is_new_in_this_release.adoc[What's new in this release]
 ** xref:Abbreviations_and_Acronyms.adoc[Abbreviations and Acronyms]
-** xref:ACCM_overview.adoc[What is Wholesale Network Portal]
+** xref:ACCM_overview.adoc[What is Access Cluster Campaign Manager]
 
 * Installation and Configuration
 ** xref:How_to_install_and_configure_ACCM_application.adoc[How to Install and Configure ACCM]
