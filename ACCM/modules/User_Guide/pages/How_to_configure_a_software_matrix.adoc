@@ -1,30 +1,40 @@
 include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
-= How to configure an {vno-initials}
+= How to configure Software matrices
 
 == Introduction
 
-This section provides the steps needed to configure an {vno-initials} to the {app-short-name}.
+This section provides the steps needed to manage the software matrices in the {app-short-name}.
 
-{app-short-name} offers a REST Interface and a WebUI for the {inp-initials} in order to configure the application.
+{app-short-name} offers a REST Interface for the operator in order to configure the application.
 
-All the configurations done through the REST API are available through the {app-short-name} WebUI.
+All the configurations done through the REST API will be available through the {app-short-name} WebUI in the next release.
 
 [NOTE]
 ====
-Before executing any request to {app-short-name} you must be authenticated as an altiplano user.
+Before managing software matrices you must be authenticated to the {app-short-name} as and altiplano user.
 Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
 
-== Using the {app-short-name} WebUI
 
 
 == Using the REST API
 
+TODO: ADD EXAMPLES AND INSTRUCTIONS TO CREATE/DELETE/RETRIEVE SOFTWARE MATRICES
+
 [NOTE]
 ====
-The access token of the {inp-initials} user must be sent in the request as a Bearer Authorization HTTP Header.
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
 To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+
+== Using the {app-short-name} WebUI
+
+[NOTE]
+====
+Before managing Software matrices you must be authenticated to the {app-short-name} as an altiplano user.
+Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
 
 include::ROOT:go-back-component.adoc[Back]

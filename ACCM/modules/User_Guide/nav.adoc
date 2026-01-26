@@ -3,9 +3,6 @@
 //DA WARNING Y NO ENCUENTRA LAS PROPERTIES AL GENERAR LA DOC!!!!
 :app-short-name: ACCM
 :main-base-app: Altiplano
-:inp-initials: INP
-:vno-initials: ISP
-:ont-initials: ONT
 
 * User Guide
 
@@ -14,5 +11,3 @@
 ** xref:How_to_use_ACCM.adoc[How to Use {app-short-name}]
 *** xref:How_to_configure_a_software_matrix.adoc[How to Configure Software Matrices (target solutions)]
 *** xref:How_to_configure_a_campaign.adoc[How to Configure Campaigns]
-
-** xref:How_to_navigate_between_Altiplano_and_ACCM.adoc[How to Navigate between {main-base-app} and {app-short-name} Apps]

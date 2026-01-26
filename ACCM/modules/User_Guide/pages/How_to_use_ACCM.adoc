@@ -1,13 +1,12 @@
 include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
-= How to Use {app-short-name} as {inp-initials}
+= How to Use {app-short-name}
 
 This section provides the steps needed to configure the application.
 
-When the {app-short-name} is installed on top of an {main-base-app} solution, the {inp-initials} user
-must set up the {vno-initials}s and configure the rules to define the restrictions each {vno-initials} has to interact with {main-base-app} interfaces.
-The {app-short-name} allows to configure global rules applying to all the {vno-initials}s and also rules applying only to a specific {vno-initials}.
-To configure the {app-short-name} as {inp-initials}, the following actions can be executed:
+When the {app-short-name} is installed on top of an {main-base-app} solution, the operator
+can create software matrices and campaigns that allows to upgrade the devices in the configured clusters
+To manage them the following actions can be executed:
 
 . xref:How_to_configure_a_software_matrix.adoc[Configure Software Matrices]
 . xref:How_to_configure_a_campaign.adoc[Configure Campaigns]
