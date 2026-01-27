@@ -33,8 +33,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 
 [NOTE]
 ====
-Before managing campaigns you must be authenticated to the {app-short-name} as and altiplano user.
-Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
+The Web UI is not available in this initial release
 ====
 
 include::ROOT:go-back-component.adoc[Back]

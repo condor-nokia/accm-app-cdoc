@@ -19,19 +19,11 @@ Below is a list of the authentication methods available, categorized by the {app
 == How to Authenticate
 
 === Authenticating to Web UI
-To authenticate to the UI the user must previously exist in keycloak.
-//If you do not have one please see the xref:_create_new_users_for_the_webui[Create new users] section.
 
-To use the {app-short-name} through the WebUI you must:
-
-. Access the {app-short-name} WebUI using the following URL: +
-link:https://{altiplano-host}/{wnp-web-context}[https://{altiplano-host}/{wnp-web-context},window=_blank]
-+
-For example:: https://{ip-host-example}/{wnp-web-context}/
-
-. Log in to {app-short-name} using a specific username and password.
-+
-image::wnpLogin.png[align="center"]
+[NOTE]
+====
+The Web UI is not available in this initial release
+====
 
 === Authenticating to the REST APIs
 To authenticate in order to use WNP REST APIs, proxies and kafka brokers an access token is needed.
