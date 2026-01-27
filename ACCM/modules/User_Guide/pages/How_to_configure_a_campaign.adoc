@@ -20,7 +20,119 @@ Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short
 
 == Using the REST API
 
+=== Create Campaign
+To create a campaign using the {app-short-name} REST API you must execute the following step:
+
+. Send a POST request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaigns[https://{altiplano-host}/{accm-api-context}/campaigns,window=_blank]
++
+Body::
++
+The request must contain the following JSON body:
++
+[source, json]
+----
+{
+	"name": "{campaignName}",
+    "softwareMatrixName": "{swMatrixName}",
+    "downloadDate": "{downloadDate}",
+    "updateDate": "{updateDate}",
+    "clusters" : [
+        {
+            "clusterName": "{clusterName}",
+            "excludedElements": "{excludedElementsList}",
+            "includedElements": "{includedElementsList}"
+        }
+    ]
+}
+----
+- *name:* _(string)_ Name that identifies the campaign.
+- *softwareMatrixName:* _(string)_ Name that identifies the software matrix to be installed on cluster elements.
+- *downloadDate (optional):* _(date-time)_ Specific date and time for the software download to the devices. Must be in the future and before updateDate.
+- *updateDate (optional):* _(date-time)_ Specific date and time for the start of the campaign's execution. Must be in the future and after downloadDate.
+- *clusters*: List of clusters to include in the campaign. Must select at least one. +
+Each cluster element is composed by: +
+* *clusterName*: _(string)_ Name of the cluster
+* *excludedElements (optional)*: _(array)_ List of specific element names to exclude from the update within this cluster. Only applicable when selected Target solution type is Device or Devices and all its ONTs.
+* *includedElements (optional)*: _(array)_ List of names of the elements whose ONTs will be updated. Only applicable when selected Target solution type is ONTs only. (To upgrade all ONTs under the cluster, this param must not be included).
+
+For example - Example 1:: If you want to create a campaign for the cluster "LSN", the following body must be sent: https://{ip-host-example}/{accm-api-context}/campaigns
++
+[source, json]
+----
+{
+	"name": "campaign1",
+	"softwareMatrixName": "device_type_sm",
+    "downloadDate": "2026-01-28T10:00:00",
+    "updateDate": "2026-01-28T12:00:00",
+    "clusters": [
+      {
+        "clusterName": "LSN"
+      }
+    ]
+}
+----
+
+For example - Example 2:: If you want to create a campaign for the cluster "LSN", excluding the element "FX16-Device-Test-B" the following body must be sent: https://{ip-host-example}/{accm-api-context}/campaigns
++
+[source, json]
+----
+{
+	"name": "campaign2",
+	"softwareMatrixName": "device_type_sm",
+    "downloadDate": "2026-01-28T10:00:00",
+    "updateDate": "2026-01-28T12:00:00",
+    "clusters": [
+      {
+        "clusterName": "LSN",
+        "excludedElements": ["FX16-Device-Test-B"]
+      }
+    ]
+}
+----
+
+For example - Example 3:: If you want to create a campaign for the cluster "LSN", excluding the element "FX16-Device-Test-B" the following body must be sent: https://{ip-host-example}/{accm-api-context}/campaigns
++
+[source, json]
+----
+{
+	"name": "campaign3",
+	"softwareMatrixName": "device_type_sm",
+    "downloadDate": "2026-01-28T10:00:00",
+    "updateDate": "2026-01-28T12:00:00",
+    "clusters": [
+      {
+        "clusterName": "LSN",
+        "excludedElements": [],
+        "includedElements": ["FX16-Device-Test-B"]
+      }
+    ]
+}
+----
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+=== Delete Campaign
+To delete a campaign using the {app-short-name} REST API you must execute the following step:
+
+. Send a DELETE request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>[https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>,window=_blank]
++
+Path Variable::
++
+* *CAMPAIGN_NAME*: It is the string that identifies the campaign.
++
+Body::
+The request body must be empty.
++
+For example:: https://{ip-host-example}/{accm-api-context}/campaigns/campaign1
+
 TODO: ADD EXAMPLES AND INSTRUCTIONS TO CREATE/DELETE/RETRIEVE CAMPAIGNS
+//TODO: (luana) ME FALTA EL GET!!!
 
 [NOTE]
 ====
