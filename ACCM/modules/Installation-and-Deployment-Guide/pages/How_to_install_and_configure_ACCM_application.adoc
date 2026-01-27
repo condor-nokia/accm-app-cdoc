@@ -90,7 +90,13 @@ aws configure import --csv file://registry-client_accessKeys.csv
 
 * Execute docker login to AWS registry to retrieve the token:
 
-aws ecr get-login-password --region us-east-1 --profile registry-client
+aws ecr get-login-password --region us-east-1 --profile registry-client | docker login
+--username AWS --password-stdin 288739758763.dkr.ecr.us-east-1.amazonaws.com
+
+* Copy the generated token in the "auth" attribute from the config.json file of docker
+(The output of the aws ecr command show the path of the config.json file. Default one is:
+/home/USER/.docker/config.json)
+
 
 * Add the output of the last command (AWS token) to the "auth" attribute in the
 values.yml file
@@ -523,10 +529,10 @@ Database upgrade mode supports, normal mode, clean (deletes all tables before up
 
 At the end of this section we can find the MariaDB information, where to install the Metadata and data. Also, the credentials needed to connect to MariaDB. Default values are:
 
-* *host:* {wnp-dbhost}
-* *name:* {wnp-dbname}
-* *user:* {wnp-dbuser}
-* *password:* {wnp-dbpassword}
+* *host:* {accm-dbhost}
+* *name:* {accm-dbname}
+* *user:* {accm-dbuser}
+* *password:* {accm-dbpassword}
 
 ==== {app-short-name} Ingress controller Configuration
 
@@ -535,11 +541,8 @@ There is no need to change this configuration except for specific requirements.
 
 The {app-short-name} exposes different interfaces. Default path values for those url interfaces are:
 
-* */wnp-ac:* It is the url used to access the REST API that allows to configure the {app-short-name}.
-* */wnp-webapp:* It is the url used to access the Web UI.
-* */wnp-indexsearch:* It is the url to access the {app-short-name} service that acts as a proxy for {vno-initials}s to query {main-base-app}’s Open Search in order to get alarms.
-* */wnp-opentsdb:* It is the url to access the {app-short-name} service that acts as a proxy for {vno-initials}s to query {main-base-app}’s opentsdb in order to get alarms.
-* */wnp-ibn:* It is the url used to access the {app-short-name} service that acts as proxy to {main-base-app}’s Intent Based Networking interface.
+* */campaign-manager-api:* It is the url used to access the REST API that allows to manage campaigns in the {app-short-name}.
+* */campaign-manager-webapp:* It is the url used to access the Web UI. (It will be available in the next release)
 
 To get more information about the interfaces exposed by {app-short-name}, refer to
 xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section.
@@ -547,27 +550,6 @@ xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{
 ==== {app-short-name} Provisioning (Web + Controller) module Configuration
 
 This section allows configuring the image that must be downloaded to install the {app-short-name} REST API and the UI module in Kubernetes.
-
-==== {app-short-name} IBN Proxy module Configuration
-
-This section allows configuring the image that must be downloaded to install the {app-short-name} IBN Proxy module in Kubernetes.
-
-==== {app-short-name} Alarms and PM Proxy module Configuration
-
-This section allows configuring the image that must be downloaded to install the {app-short-name} PM and alarms proxy module in Kubernetes.
-
-==== {app-short-name} Kafka PM and Alarms module Configuration
-
-This section allows configuring the image that must be downloaded to install the {app-short-name} PM and alarms kafka module in Kubernetes.
-
-==== {app-short-name} Kafka Brokers Configuration
-
-This section allows configuring the image that must be downloaded to install the {app-short-name} Kafka Brokers module in Kubernetes.
-
-ifdef::isamSupport[]
-==== {app-short-name} Kafka Event Writer module Configuration
-This section allows configuring the image that must be downloaded to install the {app-short-name} Kafka Event Writer module in Kubernetes.
-endif::isamSupport[]
 
 === Installing Helm chart
 
