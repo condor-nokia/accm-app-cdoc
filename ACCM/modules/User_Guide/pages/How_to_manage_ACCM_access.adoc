@@ -4,17 +4,10 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 == Introduction
 
-This section provides the steps required to create users and authenticate to the {app-short-name}.
+This section provides the steps required to authenticate to the {app-short-name}.
 
 To execute any operation on {app-short-name} you must be previously authenticated using
-{inp-initials} or {vno-initials} user credentials.
-
-== Authentication Methods
-{app-short-name} use Altiplano's keycloak to authenticate users and clients.
-It offers flexible and robust mechanisms for applications to authenticate users/clients and manage access.
-The choice of the appropriate authentication flow typically depends on the nature of the client application and the desired level of isolation.
-
-Below is a list of the authentication methods available, categorized by the {app-short-name} interfaces.
+altiplano user credentials.
 
 == How to Authenticate
 
@@ -26,296 +19,36 @@ The Web UI is not available in this initial release
 ====
 
 === Authenticating to the REST APIs
-To authenticate in order to use WNP REST APIs, proxies and kafka brokers an access token is needed.
+To authenticate in order to use WNP REST APIs an access token is needed.
 
 [NOTE]
 ====
 The generated access token must be used in the HTTP header as a Bearer authentication header when executing
-any of {app-short-name} operations through the {app-short-name} REST APIs or proxies
-and in the "sasl.password" parameter when connecting to kafka brokers.
+any of {app-short-name} operations through the {app-short-name} REST APIs
 ====
 
-==== Authenticating as {inp-initials}
-If you need to authenticate as {inp-initials} user, you must retrieve a token using the client id wnp_inp_service
-and the corresponding secret.
-
+==== Authenticating as an altiplano admin
 The token can be retrieved using the following information:
 
-- Grant Type: client_credentials
-- Access token url: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token
-- WNP keycloak client id: wnp_inp_service
-- WNP keycloak client secret: The secret for the client. This can be found under the "credentials" section of the client details in keycloak.
+- Altiplano's admin username
+- Altiplano's admin password
 
 ===== Get Token using CURL
 
 .Usage
 [source, bash, subs=attributes]
 ----
-curl --location 'https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'client_id=wnp_inp_service' \
---data-urlencode 'client_secret=CLIENT_SECRET'
+curl --location --request POST 'https://IP_ALTIPLANO/nokia-altiplano-ac/rest/auth/login' \
+--header 'Authorization: Basic USERNAME:PASSWORD ENCODED IN BASE64' \
+--data ''
 ----
 
 .Example
 [source, bash, subs=attributes]
 ----
-curl --location 'https://{ip-host-example}/altiplano-sso/realms/master/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'client_id=wnp_inp_service' \
---data-urlencode 'client_secret=Xo725aK1P7gZgtJd07YgXq4UCubTGkXk'
+curl --location --request POST 'https://100.121.38.81/nokia-altiplano-ac/rest/auth/login' \
+--header 'Authorization: Basic YWRtaW51c2VyOnBhc3N3b3Jk' \
+--data ''
 ----
-===== Get Token using Postman
-
-The steps to retrieve a token from Postman are as follows:
-
-. Create new request
-. Go to *Authorization* tab:
-
-//image::authenticateSection_obtainTokenINP1.png[align="center"]
-
-. Enter the next required data:
-+
---
-- Select the Grand type = "Client credentials".
-- Access Token URL: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token
-- Client ID: wnp_inp_service
-- WNP keycloak client secret: The secret of the client. This can be found under the "credentials" section of the client details in keycloak.
---
-
-. Click the *Get New Access Token* button
-+
-//image::authenticateSection_obtainToken2.png[align="center"]
-
-. The generated token was generated. Click the *Use Token*:
-+
-//image::authenticateSection_obtainToken3.png[align="center"]
-
-. The generated token can be copied from *Token* field.
-+
-//image::authenticateSection_obtainToken4.png[align="center"]
-
-
-==== Authenticating as an {vno-initials}
-To authenticate as an {vno-initials} to use WNP REST APIs, proxies and kafka brokers a dedicated client must exist on the "master" realm of Keycloak.
-//If you do not have the client for the {vno-initials} please see the xref:_create_an_isp_dedicated_client[Create new {vno-initials} dedicated client] section.
-
-The token can be retrieved using the following information:
-
-- Grant Type: client_credentials
-- Access token url: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token
-- WNP keycloak client id: the id of the client created in keycloak for the {vno-initials}.
-- WNP keycloak client secret: The secret for the client. This can be found under the "credentials" section of the client details in keycloak.
-
-===== Get Token using CURL
-
-.Usage
-[source, bash, subs=attributes]
-----
-curl --location 'https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'client_id={vno-initials}_CLIENT_ID' \
---data-urlencode 'client_secret={vno-initials}_CLIENT_SECRET'
-----
-
-.Example
-[source, bash, subs=attributes]
-----
-curl --location 'https://{ip-host-example}/altiplano-sso/realms/master/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'client_id=wnp_isp_lrm_service' \
---data-urlencode 'client_secret=Xo725aK1P7gZgtJd07YgXq4UCubTGkXk'
-----
-
-===== Get Token using Postman
-
-The steps to retrieve a token from Postman are as follows:
-
-. Create new request
-. Go to *Authorization* tab:
-+
-//image::authenticateSection_obtainTokenISP1.png[align="center"]
-
-. Enter the next required data:
-+
---
-- Select the Grand type = "Client credentials".
-- Access Token URL: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token
-- Client ID: The id of the client in keycloak for the {vno-initials}.
-- WNP keycloak client secret: The secret of the client. This can be found under the "credentials" section of the client details in keycloak.
---
-
-. Click the *Get New Access Token* button
-+
-//image::authenticateSection_obtainToken2.png[align="center"]
-
-. The generated token was generated. Click the *Use Token*:
-+
-//image::authenticateSection_obtainToken3.png[align="center"]
-
-. The generated token can be copied from *Token* field.
-+
-//image::authenticateSection_obtainToken4.png[align="center"]
-
-
-=== Authenticating to the REST APIs and proxies using system users and shared client
-To authenticate in order to use WNP REST APIs, proxies and kafka brokers an access token is needed.
-
-[NOTE]
-====
-The generated access token must be used in the HTTP header as a Bearer authentication header when executing
-any of {app-short-name} operations through the {app-short-name} REST APIs or proxies
-and in the "sasl.password" parameter when connecting to kafka brokers.
-====
-
-==== Authenticating as {inp-initials} or {vno-initials}
-If you need to authenticate as {inp-initials} or {vno-initials} user, you must retrieve a token using the client id wnp_services
-that was loaded to system realm on the keycloak when installing {app-short-name}.
-
-The token can be retrieved using the following information:
-
-- Grant Type: password
-- Access token url: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/system/protocol/openid-connect/token
-- WNP keycloak client id: wnp_services
-- Username: The username of the user to authenticate
-- Password: The password of the user to authenticate
-
-
-===== Get Token using CURL
-
-.Usage
-[source, bash, subs=attributes]
-----
-curl --location 'https://{altiplano-host}/altiplano-sso/realms/system/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=password' \
---data-urlencode 'client_id=wnp_services' \
---data-urlencode 'username=INP OR ISP USERNAME' \
---data-urlencode 'password=INP OR ISP PASSWORD'
-----
-
-.Example
-[source, bash, subs=attributes]
-----
-curl --location 'https://{ip-host-example}/altiplano-sso/realms/system/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=password' \
---data-urlencode 'client_id=wnp_services' \
---data-urlencode 'username=lasermax_admin_system' \
---data-urlencode 'password=lasermax_admin_system_password'
-----
-===== Get Token using Postman
-
-The steps to retrieve a token from Postman are as follows:
-
-. Create new request
-. Go to *Authorization* tab:
-+
-//image::authenticateSection_obtainTokenSharedClientISP.png[align="center"]
-
-. Enter the next required data:
-+
---
-- Select the Grand type = "Password credentials".
-- Access Token URL: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/system/protocol/openid-connect/token
-- Client ID: wnp_services.
-- Username: The username of the ISP or INP to authenticate
-- Password: The password of the user to authenticate
---
-
-. Click the *Get New Access Token* button
-+
-//image::authenticateSection_obtainToken2.png[align="center"]
-
-. The generated token was generated. Click the *Use Token*:
-+
-//image::authenticateSection_obtainToken3.png[align="center"]
-
-. The generated token can be copied from *Token* field.
-+
-//image::authenticateSection_obtainToken4.png[align="center"]
-
-=== Authenticating to the REST APIs, proxies and kafka brokers using WebUI usernames and passwords (not recommended)
-To authenticate in order to use WNP REST APIs, proxies and kafka brokers an access token is needed.
-
-[NOTE]
-====
-The generated access token must be used in the HTTP header as a Bearer authentication header when executing
-any of {app-short-name} operations through the {app-short-name} REST APIs or proxies
-and in the "sasl.password" parameter when connecting to kafka brokers.
-====
-
-To use this method the direct access grants must be previously enabled on the wnp_portal
-client of the master realm. After enabling Direct access grants the existent WebUI users
-can retrieve tokens sending an authentication request of password credential type.
-
-The token can be retrieved using the following information:
-
-- Grant Type: password
-- Access token url: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token
-- WNP keycloak client id: wnp_portal
-- wnp_portal client secret (only needed if "Client authentication" option is enabled): WNP_PORTAL_SECRET
-- Username: The username of the user to authenticate
-- Password: The password of the user to authenticate
-
-
-===== Get Token using CURL
-
-.Usage
-[source, bash, subs=attributes]
-----
-curl --location 'https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=password' \
---data-urlencode 'client_id=wnp_portal' \
---data-urlencode 'username=INP OR ISP USERNAME' \
---data-urlencode 'password=INP OR ISP PASSWORD'
-----
-
-.Example
-[source, bash, subs=attributes]
-----
-curl --location 'https://{ip-host-example}/altiplano-sso/realms/master/protocol/openid-connect/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=password' \
---data-urlencode 'client_id=wnp_portal' \
---data-urlencode 'username=lasermax_admin' \
---data-urlencode 'password=lasermax_admin_password'
-----
-===== Get Token using Postman
-
-The steps to retrieve a token from Postman are as follows:
-
-. Create new request
-. Go to *Authorization* tab:
-+
-//image::authenticateSection_obtainTokenDAGISP.png[align="center"]
-
-. Enter the next required data:
-+
---
-- Select the Grand type = "Password credentials".
-- Access Token URL: The Altiplano keycloak token url. For example: https://{altiplano-host}/altiplano-sso/realms/master/protocol/openid-connect/token
-- Client ID: wnp_portal.
-- Username: The username of the ISP or INP to authenticate
-- Password: The password of the user to authenticate
---
-
-. Click the *Get New Access Token* button
-+
-//image::authenticateSection_obtainToken2.png[align="center"]
-
-. The generated token was generated. Click the *Use Token*:
-+
-//image::authenticateSection_obtainToken3.png[align="center"]
-
-. The generated token can be copied from *Token* field.
-+
-//image::authenticateSection_obtainToken4.png[align="center"]
-
 
 include::ROOT:go-back-component.adoc[Back]
