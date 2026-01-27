@@ -46,20 +46,35 @@ To download the helm chart from Condor AWS repository, the following steps must 
 * Download the chart to the server where the application will be installed using the following commands:
 ** Import the CSV file provided by condor with the credentials to log in to AWS:
 
+[source,bash]
+----
 aws configure import --csv file://registry-client_accessKeys.csv
+----
 
 ** Login to registry
+
+[source,bash]
+----
 aws ecr get-login-password --region us-east-1 --profile registry-client \
 | helm registry login --username AWS --password-stdin \
 288739758763.dkr.ecr.us-east-1.amazonaws.com
+----
 
 ** Execute helm login to AWS registry:
+
+[source,bash]
+----
 aws ecr get-login-password --region us-east-1 --profile registry-client \
 | helm registry login --username AWS --password-stdin \
 288739758763.dkr.ecr.us-east-1.amazonaws.com
+----
 
 ** Download the chart from AWS:
+
+[source,bash]
+----
 helm pull oci://288739758763.dkr.ecr.us-east-1.amazonaws.com/altiplano-cm --version 26.1.0-MAIN-XXXX
+----
 
 [NOTE]
 ====
@@ -86,12 +101,18 @@ following steps:
 
 * Import the CSV file provided by condor with the credentials to log in to AWS:
 
+[source,bash]
+----
 aws configure import --csv file://registry-client_accessKeys.csv
+----
 
 * Execute docker login to AWS registry to retrieve the token:
 
+[source,bash]
+----
 aws ecr get-login-password --region us-east-1 --profile registry-client | docker login
 --username AWS --password-stdin 288739758763.dkr.ecr.us-east-1.amazonaws.com
+----
 
 * Copy the generated token in the "auth" attribute from the config.json file of docker
 (The output of the aws ecr command show the path of the config.json file. Default one is:
