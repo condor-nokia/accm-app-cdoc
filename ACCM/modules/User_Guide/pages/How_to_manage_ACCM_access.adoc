@@ -19,7 +19,7 @@ The Web UI is not available in this initial release
 ====
 
 === Authenticating to the REST APIs
-To authenticate in order to use WNP REST APIs an access token is needed.
+To authenticate in order to use ACCM REST APIs an access token is needed.
 
 [NOTE]
 ====
