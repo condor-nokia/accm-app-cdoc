@@ -412,12 +412,6 @@ This section allows setting specific {app-short-name} configuration used by the 
 |"/software-matrices"
 |String
 
-|ALTIPLANO_AC_PATH_URL
-|Base path for Altiplano access control.
-|Yes
-|"/nokia-altiplano-ac"
-|String
-
 |ALTIPLANO_AUTH_BASE_PATH_URL
 |Base path for Altiplano SSO authentication.
 |Yes
