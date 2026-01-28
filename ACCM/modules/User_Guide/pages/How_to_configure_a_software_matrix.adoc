@@ -1,6 +1,6 @@
 include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
-= How to configure Software matrices
+= How to configure Software Matrices
 
 == Introduction
 
@@ -16,11 +16,41 @@ Before managing software matrices you must be authenticated to the {app-short-na
 Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
 
-
-
 == Using the REST API
 
-TODO: ADD EXAMPLES AND INSTRUCTIONS TO CREATE/DELETE/RETRIEVE SOFTWARE MATRICES
+=== Create Software Matrix
+To create a software matrix using the {app-short-name} REST API you must execute the following step:
+
+. Send a POST request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/software-matrices[https://{altiplano-host}/{accm-api-context}/software-matrices,window=_blank]
++
+Body::
++
+The request must contain the following JSON body:
++
+[source, json]
+----
+{
+	"name": "{swMatrixName}",
+    "target-solution-type": "{swMatrixType}",
+    "target-solution-info": "{swMatrixInfo}"
+}
+----
+- *name:* _(string)_ Name that identifies the software matrix.
+- *target-solution-type:* _(string)_ Software Matrix. Possible values are: "device", "device-ont" or "ont".
+- *target-solution-info:* _(stringified JSON array)_ It contains a serialized collection of objects that define the specific hardware configuration and software mapping for the solution. You must ensure the JSON content is properly escaped as a single string before including it in the request body.
+
+For example - Example 1:: If you want to create a software matrix for the type "device-ont", a POST request with body must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/software-matrices
++
+[source, json]
+----
+{
+         "name" : "SWMatrix1",
+         "target-solution-type" : "device-ont",
+         "target-solution-info" : "[{\"hardware-type\":\"LS-FX-FANT-H-FX16\",\"device-version\":\"25.9\",\"target-software\":{\"display\":\"default-https:board-software/Lightspan-FX-FANT-H_HOST_25.9.1-460/Lightspan-FX-FANT-H_HOST_25.9.1-460\",\"swFileFullPath\":\"default-https:board-software/Lightspan-FX-FANT-H_HOST_25.9.1-460/Lightspan-FX-FANT-H_HOST_25.9.1-460\"},\"target-release\":{\"display\":\"24.9\",\"swFileFullPath\":\"24.9\"},\"target-vendor-specific-release-1\":null,\"target-vendor-specific-release-2\":null,\"target-cpe-software\":[],\"target-onu-software-mapping\":[{\"index\":1,\"target-release\":{\"display\":\"24.9\",\"swFileFullPath\":\"24.9\"},\"target-vendor-specific-release-1\":null,\"target-vendor-specific-release-2\":null,\"scope-criteria\":[{\"label\":\"City\",\"value\":\"Junin\"}],\"ont-software\":[{\"id\":\"mainSoftware\",\"type\":\"Main Software\",\"target-release\":\"25.9\",\"target-release-fullpath\":\"25.9\"}]}]}]"
+       }
+
+----
 
 [NOTE]
 ====
@@ -28,6 +58,47 @@ The access token of the user must be sent in the request as a Bearer Authorizati
 To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
 ====
 
+=== Delete Software Matrix
+To delete a softwaree matrix using the {app-short-name} REST API you must execute the following step:
+
+. Send a DELETE request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]
++
+Path Variable::
++
+* *SOFTWARE_MATRIX_NAME*: It is the string that identifies the software matrix.
++
+Body::
+The request body must be empty.
++
+For example:: A DELETE request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/software-matrices/SWMatrix1
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+=== Get Software Matrix
+To get a softwaree matrix using the {app-short-name} REST API you must execute the following step:
+
+. Send a GET request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]
++
+Path Variable::
++
+* *SOFTWARE_MATRIX_NAME*: It is the string that identifies the software matrix.
++
+Body::
+The request body must be empty.
++
+For example:: A GET request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/software-matrices/SWMatrix1
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
 
 == Using the {app-short-name} WebUI
 
