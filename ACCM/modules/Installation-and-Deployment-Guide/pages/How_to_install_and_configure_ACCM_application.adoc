@@ -144,51 +144,15 @@ This section allows setting specific {app-short-name} configuration used by the 
 
 |ALTIPLANO_BASE_URL
 |{main-base-app}’s Access controller REST API path. (There is no need to change default value except {main-base-app} changes the access controller REST API path)
-|Yes
+|No
 |"/nokia-altiplano-ac"
 |String
 
 |ALTIPLANO_OPENSEARCH_PATH_URL
 |{main-base-app}’s OpenSearch REST API path. (There is no need to change default value except {main-base-app} changes the OpenSearch REST API path)
-|Yes
+|No
 |"/altiplano-indexsearch"
 |String
-
-
-|DB_HOST
-|The {main-base-app} Fluentd service that {app-short-name} uses to write logs. (There is no need to change default value except if {main-base-app} Fluentd service name changes)
-|Yes
-|"altiplano-mariadb"
-|String
-
-|DB_NAME
-|The {main-base-app} Fluentd service that {app-short-name} uses to write logs. (There is no need to change default value except if {main-base-app} Fluentd service name changes)
-|Yes
-|3306
-|String
-
-|DB_USER
-|The {main-base-app} Fluentd service that {app-short-name} uses to write logs. (There is no need to change default value except if {main-base-app} Fluentd service name changes)
-|Yes
-|"altiplano-mariadb"
-|String
-
-|DB_PASSWD
-|The {main-base-app} Fluentd service that {app-short-name} uses to write logs. (There is no need to change default value except if {main-base-app} Fluentd service name changes)
-|Yes
-|"altiplano-mariadb"
-|String
-
-|DB_PASSWD
-|The {main-base-app} Fluentd service that {app-short-name} uses to write logs. (There is no need to change default value except if {main-base-app} Fluentd service name changes)
-|Yes
-|"altiplano-mariadb"
-|String
-
-Aquí tienes todas las variables procesadas siguiendo el formato de tu ejemplo. He mantenido la coherencia con los valores que pasaste (descripciones genéricas o específicas según el contexto de la variable).
-
-Puedes copiar y pegar este bloque directamente en tu archivo .adoc:
-AsciiDoc
 
 |CP_LEAVES_BATCH_SIZE
 |Size of the batch for CP leaves processing.
@@ -448,12 +412,6 @@ AsciiDoc
 |"/software-matrices"
 |String
 
-|FOOTER_MESSAGE
-|Version message displayed in the application footer.
-|Yes
-|"26.1.0-MAIN-0001"
-|String
-
 |ALTIPLANO_AC_PATH_URL
 |Base path for Altiplano access control.
 |Yes
@@ -518,12 +476,6 @@ AsciiDoc
 |Default page size for data grids in the UI.
 |Yes
 |"10"
-|String
-
-|REACT_APP_FOOTER_MESSAGE
-|Footer message for the React application UI.
-|Yes
-|"26.1.0-MAIN-0001"
 |String
 
 |FLUENTD_LOG_HOST
