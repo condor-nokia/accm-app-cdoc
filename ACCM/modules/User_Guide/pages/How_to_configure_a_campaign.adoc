@@ -16,8 +16,6 @@ Before managing campaigns you must be authenticated to the {app-short-name} as a
 Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
 
-
-
 == Using the REST API
 
 === Create Campaign
@@ -56,7 +54,7 @@ Each cluster element is composed by: +
 * *excludedElements (optional)*: _(array)_ List of specific element names to exclude from the update within this cluster. Only applicable when selected Target solution type is Device or Devices and all its ONTs.
 * *includedElements (optional)*: _(array)_ List of names of the elements whose ONTs will be updated. Only applicable when selected Target solution type is ONTs only. (To upgrade all ONTs under the cluster, this param must not be included).
 
-For example - Example 1:: If you want to create a campaign for the cluster "LSN", the following body must be sent: https://{ip-host-example}/{accm-api-context}/campaigns
+For example - Example 1:: If you want to create a campaign for the cluster "LSN", a POST request with body must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns
 +
 [source, json]
 ----
@@ -73,7 +71,7 @@ For example - Example 1:: If you want to create a campaign for the cluster "LSN"
 }
 ----
 
-For example - Example 2:: If you want to create a campaign for the cluster "LSN", excluding the element "FX16-Device-Test-B" the following body must be sent: https://{ip-host-example}/{accm-api-context}/campaigns
+For example - Example 2:: If you want to create a campaign for the cluster "LSN", excluding the element "FX16-Device-Test-B", a POST request with body must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns
 +
 [source, json]
 ----
@@ -91,7 +89,7 @@ For example - Example 2:: If you want to create a campaign for the cluster "LSN"
 }
 ----
 
-For example - Example 3:: If you want to create a campaign for the cluster "LSN", excluding the element "FX16-Device-Test-B" the following body must be sent: https://{ip-host-example}/{accm-api-context}/campaigns
+For example - Example 3:: If you want to create a campaign for the cluster "LSN", including the element "FX16-Device-Test-B", a POST request with body must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns
 +
 [source, json]
 ----
@@ -129,10 +127,7 @@ Path Variable::
 Body::
 The request body must be empty.
 +
-For example:: https://{ip-host-example}/{accm-api-context}/campaigns/campaign1
-
-TODO: ADD EXAMPLES AND INSTRUCTIONS TO CREATE/DELETE/RETRIEVE CAMPAIGNS
-//TODO: (luana) ME FALTA EL GET!!!
+For example:: A DELETE request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns/campaign1
 
 [NOTE]
 ====
@@ -140,6 +135,26 @@ The access token of the user must be sent in the request as a Bearer Authorizati
 To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
 ====
 
+=== Get Campaign
+To get a campaign using the {app-short-name} REST API you must execute the following step:
+
+. Send a GET request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>[https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>,window=_blank]
++
+Path Variable::
++
+* *CAMPAIGN_NAME*: It is the string that identifies the campaign.
++
+Body::
+The request body must be empty.
++
+For example:: A GET request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns/campaign1
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
 
 == Using the {app-short-name} WebUI
 
