@@ -9,7 +9,7 @@ image::GeneralContextDiagram_RevA.png[align="center"]
 
 == Solution components
 
-{app-short-name} offers a configuration interface (REST API and UI) that allows the operator to configure the software matrices(target solutions) and
+{app-short-name} offers a configuration interface (REST API and UI) that allows the operator to configure the software matrices (target solutions) and
 campaigns, and a core service that orchestrate the different download/upgrade activities within the campaigns following a specific order.
 
 These components include:

@@ -44,7 +44,7 @@ To download the helm chart from Condor AWS repository, the following steps must 
 
 * Install "AWS Command Line Interface"
 * Download the chart to the server where the application will be installed using the following commands:
-** Import the CSV file provided by condor with the credentials to log in to AWS:
+** Import the CSV file provided by Condor with the credentials to log in to AWS:
 
 [source,bash]
 ----
@@ -94,12 +94,12 @@ The different available configuration sections are explained below:
 Configuration is required when the images are downloaded from Condor AWS registry or any other private registry.
 Change to enabled=true and put in the “auth” attribute the proper login credentials that allows connection to the registry.
 
-In case of condor Registry the token to add to "auth" attribute can be retrieve executing the
+In case of Condor Registry the token to add to "auth" attribute can be retrieve executing the
 following steps:
 
 * Install "AWS Command Line Interface" if it is not installed yet
 
-* Import the CSV file provided by condor with the credentials to log in to AWS:
+* Import the CSV file provided by Condor with the credentials to log in to AWS:
 
 [source,bash]
 ----
@@ -544,9 +544,9 @@ AsciiDoc
 
 This section allows configuring the image that must be downloaded to install the Database on {main-base-app}’s MariaDB.
 
-Database installation mode supports, normal mode, clean (deletes all tables before installing) or disabled. Default mode is: clean.
+Database installation mode supports: normal, clean (deletes all tables before installing) or disabled modes. Default mode is: clean.
 
-Database upgrade mode supports, normal mode, clean (deletes all tables before upgrading) or disabled. Default mode is: normal
+Database upgrade mode supports: normal, clean (deletes all tables before upgrading) or disabled modes. Default mode is: normal.
 
 At the end of this section we can find the MariaDB information, where to install the Metadata and data. Also, the credentials needed to connect to MariaDB. Default values are:
 
@@ -605,7 +605,7 @@ To check all the required {app-short-name} pods and services are up and running,
 $ kubectl get pods,svc -n nokia | grep cm
 ----
 
-* Sample output of the command(it must show the following pods and services in "Running" state)
+* Sample output of the command (it must show the following pods and services in "Running" state)
 [source, bash, subs=attributes]
 ----
 $ kubectl get pods,svc -n nokia | grep cm
