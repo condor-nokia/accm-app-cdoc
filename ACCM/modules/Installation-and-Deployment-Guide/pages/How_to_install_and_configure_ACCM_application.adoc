@@ -298,42 +298,6 @@ This section allows setting specific {app-short-name} configuration used by the 
 |"device-staging-ont"
 |String
 
-|ACTIVITY_SUFFIX_DOWNLOAD
-|Suffix for download activity names.
-|Yes
-|"DL"
-|String
-
-|ACTIVITY_SUFFIX_UPGRADE_SPINE
-|Suffix for spine upgrade activities.
-|Yes
-|"UPG_SP"
-|String
-
-|ACTIVITY_SUFFIX_UPGRADE_CP_BATCH
-|Suffix for CP batch upgrade activities.
-|Yes
-|"UPG_CPB"
-|String
-
-|ACTIVITY_SUFFIX_UPGRADE_ACC_BATCH
-|Suffix for ACC batch upgrade activities.
-|Yes
-|"UPG_ACB"
-|String
-
-|ACTIVITY_SUFFIX_UPGRADE_HEADEND
-|Suffix for headend upgrade activities.
-|Yes
-|"UPG_HE"
-|String
-
-|ACTIVITY_SUFFIX_UPGRADE_OLT_BATCH
-|Suffix for OLT batch upgrade activities.
-|Yes
-|"UPG_OLTB"
-|String
-
 |KEYCLOAK_URL
 |Path for Keycloak login authentication.
 |Yes
