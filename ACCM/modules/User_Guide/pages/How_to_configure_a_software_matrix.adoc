@@ -31,7 +31,7 @@ The request must contain the following JSON body:
 [source, json]
 ----
 {
-    "name": "{swMatrixName}",
+"name": "{swMatrixName}",
     "target-solution-type": "{swMatrixType}",
     "target-solution-info": "{swMatrixInfo}"
 }
