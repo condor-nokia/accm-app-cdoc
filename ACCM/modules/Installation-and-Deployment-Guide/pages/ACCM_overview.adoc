@@ -41,7 +41,7 @@ For more details on configuring {app-short-name}, see the xref:User_Guide:How_to
 
 [IMPORTANT]
 ====
-For this initial release, only create/upgrade/retrieve operations for matrix and campaigns are allowed using the REST API
+For this initial release, only create/delete/retrieve operations for software matrices and campaigns are allowed using the REST API
 ====
 
 === {app-full-name} Core

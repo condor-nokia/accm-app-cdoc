@@ -31,7 +31,7 @@ The request must contain the following JSON body:
 [source, json]
 ----
 {
-	"name": "{campaignName}",
+    "name": "{campaignName}",
     "softwareMatrixName": "{swMatrixName}",
     "downloadDate": "{downloadDate}",
     "updateDate": "{updateDate}",
@@ -59,8 +59,8 @@ For example - Example 1:: If you want to create a campaign for the cluster "LSN"
 [source, json]
 ----
 {
-	"name": "campaign1",
-	"softwareMatrixName": "device_type_sm",
+    "name": "campaign1",
+    "softwareMatrixName": "device_type_sm",
     "downloadDate": "2026-01-28T10:00:00",
     "updateDate": "2026-01-28T12:00:00",
     "clusters": [
@@ -76,8 +76,8 @@ For example - Example 2:: If you want to create a campaign for the cluster "LSN"
 [source, json]
 ----
 {
-	"name": "campaign2",
-	"softwareMatrixName": "device_type_sm",
+    "name": "campaign2",
+    "softwareMatrixName": "device_type_sm",
     "downloadDate": "2026-01-28T10:00:00",
     "updateDate": "2026-01-28T12:00:00",
     "clusters": [
@@ -94,8 +94,8 @@ For example - Example 3:: If you want to create a campaign for the cluster "LSN"
 [source, json]
 ----
 {
-	"name": "campaign3",
-	"softwareMatrixName": "device_type_sm",
+    "name": "campaign3",
+    "softwareMatrixName": "device_type_sm",
     "downloadDate": "2026-01-28T10:00:00",
     "updateDate": "2026-01-28T12:00:00",
     "clusters": [
