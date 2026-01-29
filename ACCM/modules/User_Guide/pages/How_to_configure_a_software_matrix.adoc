@@ -31,7 +31,7 @@ The request must contain the following JSON body:
 [source, json]
 ----
 {
-	"name": "{swMatrixName}",
+    "name": "{swMatrixName}",
     "target-solution-type": "{swMatrixType}",
     "target-solution-info": "{swMatrixInfo}"
 }
@@ -45,11 +45,10 @@ For example - Example 1:: If you want to create a software matrix for the type "
 [source, json]
 ----
 {
-         "name" : "SWMatrix1",
-         "target-solution-type" : "device-ont",
-         "target-solution-info" : "[{\"hardware-type\":\"LS-FX-FANT-H-FX16\",\"device-version\":\"25.9\",\"target-software\":{\"display\":\"default-https:board-software/Lightspan-FX-FANT-H_HOST_25.9.1-460/Lightspan-FX-FANT-H_HOST_25.9.1-460\",\"swFileFullPath\":\"default-https:board-software/Lightspan-FX-FANT-H_HOST_25.9.1-460/Lightspan-FX-FANT-H_HOST_25.9.1-460\"},\"target-release\":{\"display\":\"24.9\",\"swFileFullPath\":\"24.9\"},\"target-vendor-specific-release-1\":null,\"target-vendor-specific-release-2\":null,\"target-cpe-software\":[],\"target-onu-software-mapping\":[{\"index\":1,\"target-release\":{\"display\":\"24.9\",\"swFileFullPath\":\"24.9\"},\"target-vendor-specific-release-1\":null,\"target-vendor-specific-release-2\":null,\"scope-criteria\":[{\"label\":\"City\",\"value\":\"Junin\"}],\"ont-software\":[{\"id\":\"mainSoftware\",\"type\":\"Main Software\",\"target-release\":\"25.9\",\"target-release-fullpath\":\"25.9\"}]}]}]"
-       }
-
+    "name" : "SWMatrix1",
+    "target-solution-type" : "device-ont",
+    "target-solution-info" : "[{\"hardware-type\":\"LS-FX-FANT-H-FX16\",\"device-version\":\"25.9\",\"target-software\":{\"display\":\"default-https:board-software/Lightspan-FX-FANT-H_HOST_25.9.1-460/Lightspan-FX-FANT-H_HOST_25.9.1-460\",\"swFileFullPath\":\"default-https:board-software/Lightspan-FX-FANT-H_HOST_25.9.1-460/Lightspan-FX-FANT-H_HOST_25.9.1-460\"},\"target-release\":{\"display\":\"24.9\",\"swFileFullPath\":\"24.9\"},\"target-vendor-specific-release-1\":null,\"target-vendor-specific-release-2\":null,\"target-cpe-software\":[],\"target-onu-software-mapping\":[{\"index\":1,\"target-release\":{\"display\":\"24.9\",\"swFileFullPath\":\"24.9\"},\"target-vendor-specific-release-1\":null,\"target-vendor-specific-release-2\":null,\"scope-criteria\":[{\"label\":\"City\",\"value\":\"Junin\"}],\"ont-software\":[{\"id\":\"mainSoftware\",\"type\":\"Main Software\",\"target-release\":\"25.9\",\"target-release-fullpath\":\"25.9\"}]}]}]"
+}
 ----
 
 [NOTE]
