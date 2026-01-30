@@ -1,10 +1,10 @@
 include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
-= What's new in Release 26.1.0-MAIN
+= What's new in Release {release-number}{prerelease-tag}
 
 * Initial version of the {app-full-name} application for internal use/testing in conjunction with Nokia.
 This version includes part of the software matrix API (target solution), campaigns, and the
-orchestrator responsible for executing device updates within a cluster in a specific order.
+orchestrator responsible for executing device updates within a cluster in a specific order. +
 (All missing features will be completed in the next release. For details, please refer
 to the project plan, which specifies which user stories are included in this version)
 

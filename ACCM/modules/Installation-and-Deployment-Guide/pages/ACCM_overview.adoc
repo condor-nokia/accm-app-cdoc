@@ -60,9 +60,9 @@ The following table describes the main features provided by {app-full-name}
 [width="99%",cols="30%,39%,30%,options="header"]
 |===
 |*Feature/Enhancement* |*Description* |*See Section*
-|Software Matrix management|{app-short-name} .|xref:User_Guide:How_to_use_ACCM.adoc[User Guide - How to Use {app-short-name} as operator]
-|Campaigns management|{app-short-name} .|xref:User_Guide:How_to_use_ACCM.adoc[User Guide - How to Use {app-short-name} as operator]
-|Orchestration|{app-short-name} .|xref:User_Guide:How_to_use_ACCM.adoc[User Guide - How to Use {app-short-name} as operator]
+|Software Matrices Management|{app-short-name} provides a REST API to manage Software Matrices. In this capacity, ACCM acts as a proxy for Altiplano Target Solutions, enabling the operations: Create, Get and Delete.|xref:User_Guide:How_to_use_ACCM.adoc[User Guide - How to Use {app-short-name} as operator]
+|Campaigns Management|{app-short-name} provides a REST API to manage campaigns, supporting Create, Get, and Delete operations.|xref:User_Guide:How_to_use_ACCM.adoc[User Guide - How to Use {app-short-name} as operator]
+|Orchestration|{app-short-name} features a campaign orchestrator responsible for managing the sequential activity flow within a campaign update. Its execution logic is driven by real-time status and completion notifications received from Altiplano via a Kafka topic.|xref:User_Guide:How_to_use_ACCM.adoc[User Guide - How to Use {app-short-name} as operator]
 |===
 
 
