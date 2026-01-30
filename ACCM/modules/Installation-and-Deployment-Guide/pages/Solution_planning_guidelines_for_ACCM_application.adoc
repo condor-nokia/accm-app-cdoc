@@ -42,7 +42,8 @@ For the exact versions of Kubernetes, Helm, and Container runtime supported curr
 {app-full-name} Application has a separate UI and REST APIs.
 The client host requires any recent versions of the browser - Firefox or Chrome or Microsoft Edge to access the WebUI client of the {app-full-name}.
 
-== CPU, Memory, and Hard disk Recommendations for {app-short-name} Deployment
+//== CPU, Memory, and Hard disk Recommendations for {app-short-name} Deployment
+== Recommendations for ACCM Deployment
 
 Refer to the _Solution Planning Guide for Nokia Altiplano Access Controller and FastMile Controller_ for the dimensioning guidelines pertaining to Access Controller and its associated micro-services.
 
@@ -75,6 +76,7 @@ The hardware requirements for {app-full-name} initial release installation are:
 The resource tables below do not include the additional resources required to perform an application upgrade.
 ====
 
+////
 == Hard disk recommendations
 
 The hard disk size recommendation accounts for the following key parameters:
@@ -86,12 +88,13 @@ The hard disk size recommendation accounts for the following key parameters:
 |Opensearch logstash |15 days
 |Opensearch alarms-history |90 days
 |Opensearch health-alarms |90 days
-|Opensearch inventory (if using assigned resources also include {{vno-initials}} "intents" index |30 days
+|Opensearch inventory |30 days
 |Opensearch user-activity-log |30 days
 |Opensearch syslog |15 days
 |OpenTSDB |7 days
 |PTS Data |15 days
 |Kafka Topics |7 days (PM topics: 2 hours)
 |===
+////
 
 include::ROOT:go-back-component.adoc[Back]

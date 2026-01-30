@@ -3,8 +3,8 @@
 :release-year: 2026
 :release-number: 26.1.0
 :prerelease-tag:
-:altiplano-release-number: 25.9
-:screenshot-altiplano-release-number: 25.9
+:altiplano-release-number: 25.9.1
+:screenshot-altiplano-release-number: 25.9.1
 :chart-version: XX.X
 :helm-chart-name: altiplano-cm
 :issue-number: 1
