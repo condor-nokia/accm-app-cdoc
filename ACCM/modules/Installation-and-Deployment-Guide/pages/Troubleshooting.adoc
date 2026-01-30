@@ -50,10 +50,11 @@ However, in case {app-short-name} is installed after an undeploy process, {app-s
 the database from scratch.
 ====
 
+////
 == Inspect logs when error occurs
 === Inspect logs in Altiplano's Dashboards
 {app-short-name} sends the application logs to Altiplano's fluentd.
-To inspect application logs please go to Altiplano's dashboards and search for "wnp" entries:
+To inspect application logs please go to Altiplano's dashboards and search for "accm" entries:
 
 https://ALTIPLANO-SERVER/altiplano-indexsearch-dashboards
 
@@ -73,7 +74,7 @@ kubectl logs pod_id
 ----
 kubectl logs pod/altiplano-cm-controller
 ----
-
+////
 
 
 include::ROOT:go-back-component.adoc[Back]
