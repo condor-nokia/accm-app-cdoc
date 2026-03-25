@@ -31,7 +31,7 @@ mysql -u root -p
 +
 [source, bash]
 ----
-. CREATE DATABASE app_cm;
+CREATE DATABASE app_cm;
 ----
 
 . Check if the user already exists.
