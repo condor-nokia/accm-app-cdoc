@@ -2,7 +2,7 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 = What's new in Release {release-number}{prerelease-tag}
 
-* Initial version of the {app-full-name} application for internal use/testing in conjunction with Nokia.
+* Version with fixes to bugs reported by Nokia after testing the first release of the {app-full-name} application.
 This version includes part of the software matrix API (target solution), campaigns, and the
 orchestrator responsible for executing device updates within a cluster in a specific order. +
 (All missing features will be completed in the next release. For details, please refer
