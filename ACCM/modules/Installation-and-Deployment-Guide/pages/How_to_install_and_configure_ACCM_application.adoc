@@ -298,6 +298,18 @@ This section allows setting specific {app-short-name} configuration used by the 
 |"device-staging-ont"
 |String
 
+|ACTIVITY_POST_CHECKS_ENABLED
+|Flag to enable post-execution validation checks for activities.
+|Yes
+|false
+|Boolean
+
+|ALTIPLANO_ACTIVITY_DOWNLOAD_OPTION
+|Endpoint base path for managing Altiplano activities.
+|Yes
+|"/activities"
+|String
+
 |KEYCLOAK_URL
 |Path for Keycloak login authentication.
 |Yes
