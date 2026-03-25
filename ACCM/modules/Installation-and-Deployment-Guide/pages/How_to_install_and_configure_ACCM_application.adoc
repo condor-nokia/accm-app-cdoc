@@ -304,7 +304,7 @@ This section allows setting specific {app-short-name} configuration used by the 
 |false
 |Boolean
 
-|ALTIPLANO_ACTIVITY_DOWNLOAD_OPTION
+|ALTIPLANO_ACTIVITIES_PATH
 |Endpoint base path for managing Altiplano activities.
 |Yes
 |"/activities"
