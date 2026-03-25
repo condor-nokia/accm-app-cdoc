@@ -1,10 +1,10 @@
 
-:release-month: January
+:release-month: March
 :release-year: 2026
-:release-number: 26.1.0
+:release-number: 26.1.0 (DROP 1 With fixes)
 :prerelease-tag:
-:altiplano-release-number: 25.9.1
-:screenshot-altiplano-release-number: 25.9.1
+:altiplano-release-number: 26.3
+:screenshot-altiplano-release-number: 26.3
 :chart-version: XX.X
 :helm-chart-name: altiplano-cm
 :issue-number: 1
