@@ -165,7 +165,8 @@ Path Variable::
 * *CAMPAIGN_NAME*: It is the string that identifies the software matrix.
 +
 Body::
-The request body must contain the fields that wants to be modified
+The request body must contain all the fields that were used in the campaign's creation except for the campaignName field.
+The value of all these fields can be modified. If any field is missing from the body request its value will be 'null'
 +
 For example:: A PUT request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns/campaign1
 +

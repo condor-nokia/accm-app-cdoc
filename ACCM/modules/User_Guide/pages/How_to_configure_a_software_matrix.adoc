@@ -132,7 +132,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 === Edit a Software Matrix
 To edit a software matrix using the {app-short-name} REST API:
 
-. send a PUT request to the following URL
+. send a PATCH request to the following URL
 link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]
 +
 Path Variable::
@@ -142,7 +142,7 @@ Path Variable::
 Body::
 The request body must contain only the fields that wants to be modified
 +
-For example:: A PUT request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/software-matrices/SWMatrix1
+For example:: A PATCH request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/software-matrices/SWMatrix1
 +
 [source, json]
 ----
