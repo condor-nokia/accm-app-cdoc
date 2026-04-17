@@ -68,7 +68,8 @@ The hardware requirements for {app-full-name} initial release installation are:
 |===
 | *Service* | *vCPU* | *Memory (GB)* | *Disk (GB)*
 | REST API + UIs | 1,5 | 2 | 10
-| *TOTAL* | *1,5* | *2* | *10*
+| Kafka Listeners | 0,75 | 1 | 10
+| *TOTAL* | *2,25* | *2* | *10*
 |===
 
 [NOTE]

@@ -4,7 +4,7 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 When {app-short-name} is successfully installed, the following interfaces are exposed:
 
-== {app-short-name} Web UI (To be included in the next release)
+== {app-short-name} Web UI
 
 Provides a user-friendly way for operators to define, schedule, and monitor software update campaigns.
 It allows users to select target clusters, define software matrices, and view campaign status in real-time.
@@ -16,7 +16,7 @@ For example if {main-base-app}’s public IP is {ip-host-example} the {app-short
 https://{ip-host-example}/{accm-web-context}[https://{ip-host-example}/{accm-web-context},window=_blank]
 
 
-== {app-short-name} AC (REST API)
+== {app-short-name} REST API
 
 The {app-short-name} AC REST API allows an INP user to configure the {app-short-name} sending HTTP REST REQUEST.
 To access it you must use the following URL: +
@@ -32,7 +32,7 @@ The following table describes ports and url exposed by the interfaces listed abo
 [width="99%",cols="30%,30%,40%,options="header"]
 |===
 |*Interface* |*Protocol* |*{app-short-name} Service Port/Altiplano Ingress Port*
-|WebUI (To be included in next release) | HTTPS |  8443 / 443
+|WebUI | HTTPS |  8443 / 443
 |REST API | HTTPS | 8443 / 443
 |===
 

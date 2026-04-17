@@ -1,7 +1,7 @@
 
-:release-month: March
+:release-month: April
 :release-year: 2026
-:release-number: 26.1.0 (DROP 1 With fixes)
+:release-number: 26.3.0 (DROP 2a)
 :prerelease-tag:
 :altiplano-release-number: 26.3
 :screenshot-altiplano-release-number: 26.3

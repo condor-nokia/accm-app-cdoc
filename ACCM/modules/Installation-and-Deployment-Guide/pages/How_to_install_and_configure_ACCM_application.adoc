@@ -304,10 +304,106 @@ This section allows setting specific {app-short-name} configuration used by the 
 |false
 |Boolean
 
+|ACTIVITY_SUFFIX_DOWNLOAD
+|Suffix to be added to the download activity.
+|Yes
+|"DL"
+|String
+
+|ACTIVITY_SUFFIX_UPGRADE_SPINE
+|Suffix to be added to the upgrade spine activity.
+|Yes
+|"UPG_SP"
+|String
+
+|ACTIVITY_SUFFIX_UPGRADE_CP_BATCH
+|Suffix to be added to the upgrade CP Batch activity.
+|Yes
+|"UPG_CPB"
+|String
+
+|ACTIVITY_SUFFIX_UPGRADE_ACC_BATCH
+|Suffix to be added to the upgrade Access Batch activity.
+|Yes
+|"UPG_ACB"
+|String
+
+|ACTIVITY_SUFFIX_UPGRADE_HEADEND
+|Suffix to be added to the upgrade headend activity.
+|Yes
+|"UPG_HE"
+|String
+
+|ACTIVITY_SUFFIX_UPGRADE_OLT_BATCH
+|Suffix to be added to the upgrade olt batch activity.
+|Yes
+|"UPG_OLTB"
+|String
+
 |ALTIPLANO_ACTIVITIES_PATH
 |Endpoint base path for managing Altiplano activities.
 |Yes
 |"/activities"
+|String
+
+|NOTIFICATION_POLLING_INTERVAL
+|Interval in milliseconds to check for notifications in DB.
+|Yes
+|1000
+|Integer
+
+|LIGHTSPAN_DEVICES_INTENT_TYPES
+|Intent types that are used for lightspan devices.
+|Yes
+|"device-fx,device-mf"
+|String
+
+|IP_DEVICES_INTENT_TYPES
+|Intent types that are used for IP devices.
+|Yes
+|"device-ixr"
+|String
+
+|ACTIVITY_POST_CHECKS_ENABLED
+|Post checks validations flag that allows to enable/disable all the validations .
+|Yes
+|"true"
+|Boolean
+
+|ACTIVITY_TRAFFIC_POST_CHECK_ENABLED
+|Post checks traffic validations flag that allows to enable/disable only the traffic part of the validations.
+|Yes
+|"false"
+|Boolean
+
+|DEVICE_UPLINK_CONNECTION_INTENT_TYPE
+|Intent types that are used for uplink connections.
+|Yes
+|"uplink-connection"
+|String
+
+|DEVICE_ETHERNET_CONNECTION_INTENT_TYPE
+|Intent types that are used for ethernet connections.
+|Yes
+|"ethernet-connection"
+|String
+
+|REACT_APP_SUGGEST_API
+|Suggest API used for software in ACCM UI.
+|Yes
+|"/campaign-manager-api/rest/software/v1"
+|String
+
+|REACT_APP_SUGGEST_MAP_DEVICE_TYPE
+|Suggest device type API used for software in ACCM UI.
+|Yes
+|'{\"composite-device\":\"/campaign-manager-api/rest/software/v1/suggest/interfaceVersionsDirectFromAV\",\"ixr-device\":\"/campaign-manager-api/rest/mds/suggest/interfaceVersionsDirectFromNSP\"}'
+|String
+
+|ALTIPLANO_IBN_LIVE_COLLECTION_PATH
+|Altiplano's live collection REST API used by the ACCM application.
+|Yes
+|"/rest/ibn/livecollection/v1"
 |String
 
 |KEYCLOAK_URL
@@ -400,6 +496,12 @@ This section allows setting specific {app-short-name} configuration used by the 
 |"master"
 |String
 
+|KEYCLOAK_CLIENT_ID
+|Client ID used by the ACCM to retrieve tokens.
+|Yes
+|"ALTIPLANO"
+|String
+
 |KEYCLOAK_PORTAL_ID
 |Client ID used for Keycloak portal.
 |Yes
@@ -460,6 +562,18 @@ This section allows setting specific {app-short-name} configuration used by the 
 |"debug"
 |String
 
+|ACTIVITY_ACTIVE_WAIT_ENABLED
+|Flag to enable/disable the active wait for activities
+|Yes
+|"false"
+|Boolean
+
+|VALIDITY_WINDOW_ENABLED
+|Flag to enable/disable the validity window feature.
+|Yes
+|"true"
+|Boolean
+
 |===
 
 ==== Database Configuration
@@ -485,7 +599,7 @@ There is no need to change this configuration except for specific requirements.
 The {app-short-name} exposes different interfaces. Default path values for those url interfaces are:
 
 * */campaign-manager-api:* It is the url used to access the REST API that allows to manage campaigns in the {app-short-name}.
-* */campaign-manager-webapp:* It is the url used to access the Web UI. (It will be available in the next release)
+* */campaign-manager-webapp:* It is the url used to access the Web UI.
 
 To get more information about the interfaces exposed by {app-short-name}, refer to
 xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section.
@@ -531,21 +645,14 @@ $ kubectl get pods,svc -n nokia | grep cm
 [source, bash, subs=attributes]
 ----
 $ kubectl get pods,svc -n nokia | grep cm
-pod/altiplano-cm-controller-b8d55946d-wjb8f                          1/1     Running   0               30h
-service/altiplano-cm-controller                         ClusterIP   10.96.63.61      <none>        8080/TCP,8443/TCP
-----
+pod/altiplano-cm-campaign-kafka-listener-77b7c75ff8-mdct4           1/1     Running   0             17h
+pod/altiplano-cm-controller-8697b584cc-zm6pw                        1/1     Running   0             17h
+service/altiplano-cm-controller                         ClusterIP   10.103.41.179    <none>        8080/TCP,8443/TCP----
 
 === Installation Verification
 
 Open a browser and go to link:https://{altiplano-host}/{accm-web-context}[https://{altiplano-host}/{accm-web-context},window=_blank], where {altiplano-host} must be replaced with the public IP or the hostname where {main-base-app} is installed.
 
-If the {app-short-name} is successfully installed, the WEB UI Mock up is shown
-
-[NOTE]
-====
-The Web UI included in this initial release is only a mockup and is not implemented and connected to the REST API.
-To create campaigns use the REST API requests
-====
-
+If the {app-short-name} is successfully installed, the WEB UI is shown
 
 include::ROOT:go-back-component.adoc[Back]

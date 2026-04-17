@@ -4,7 +4,7 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 [IMPORTANT]
 ====
-For the initial release, the admin user of Altiplano can be used to execute the requests.
+For this initial release, the admin user of Altiplano can be used to execute the requests.
 ====
 
 include::ROOT:go-back-component.adoc[Back]

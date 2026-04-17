@@ -2,10 +2,14 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 = What's new in Release {release-number}{prerelease-tag}
 
-* Version with fixes to bugs reported by Nokia after testing the first release of the {app-full-name} application.
-This version includes part of the software matrix API (target solution), campaigns, and the
-orchestrator responsible for executing device updates within a cluster in a specific order. +
-(All missing features will be completed in the next release. For details, please refer
-to the project plan, which specifies which user stories are included in this version)
+* Software matrix and campaigns now supports update operations.
+
+* UI was developed and allows to manage Software matrix and campaigns
+
+* Authentication was added to the UI supporting only users with Altiplano admin role.
+
+* Kafka notification support was added to update activity/campaign statuses.
+
+* Fixes to bugs reported by Nokia after testing the first release with fixes of the {app-full-name} application.
 
 include::ROOT:go-back-component.adoc[Back]
