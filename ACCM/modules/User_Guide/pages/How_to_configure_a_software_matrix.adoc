@@ -118,7 +118,6 @@ For example:: A PATCH request must be sent to the following URL: https://{ip-hos
 [source, json]
 ----
 {
-    "name" : "",
     "target-solution-type" : "device-ont",
     "target-solution-info" : [
     {
