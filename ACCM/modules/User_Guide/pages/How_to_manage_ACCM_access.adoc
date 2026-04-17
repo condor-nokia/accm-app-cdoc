@@ -18,7 +18,7 @@ If you do not have one please create an Altiplano admin user on Altiplano's keyc
 To use the {app-short-name} through the WebUI you must:
 
 . Access the {app-short-name} WebUI using the following URL: +
-link:https://{altiplano-host}/{wnp-web-context}[https://{altiplano-host}/{accm-web-context},window=_blank]
+link:https://{altiplano-host}/{accm-web-context}[https://{altiplano-host}/{accm-web-context},window=_blank]
 +
 For example:: https://{ip-host-example}/{accm-web-context}/
 
