@@ -642,17 +642,17 @@ $ kubectl get pods,svc -n nokia | grep cm
 ----
 
 For example:
+
+Sample output of the command (it must show the following pods and services in "Running" state)
+[source, bash, subs=attributes]
+
 [source, bash]
 ----
-* Sample output of the command (it must show the following pods and services in "Running" state)
-[source, bash, subs=attributes]
-----
-
 $ kubectl get pods,svc -n nokia | grep cm
 pod/altiplano-cm-campaign-kafka-listener-77b7c75ff8-mdct4           1/1     Running   0             17h
 pod/altiplano-cm-controller-8697b584cc-zm6pw                        1/1     Running   0             17h
 service/altiplano-cm-controller                         ClusterIP   10.103.41.179    <none>        8080/TCP,8443/TCP----
-
+----
 === Installation Verification
 
 Open a browser and go to link:https://{altiplano-host}/{accm-web-context}[https://{altiplano-host}/{accm-web-context},window=_blank], where {altiplano-host} must be replaced with the public IP or the hostname where {main-base-app} is installed.
