@@ -58,7 +58,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 ====
 
 === Delete Software Matrix
-To delete a softwaree matrix using the {app-short-name} REST API you must execute the following step:
+To delete a software matrix using the {app-short-name} REST API you must execute the following step:
 
 . Send a DELETE request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]
@@ -77,6 +77,7 @@ For example:: A DELETE request must be sent to the following URL: https://{ip-ho
 The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
 To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
 ====
+
 
 === Get Software Matrix
 To get a softwaree matrix using the {app-short-name} REST API you must execute the following step:
@@ -99,11 +100,120 @@ The access token of the user must be sent in the request as a Bearer Authorizati
 To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
 ====
 
-== Using the {app-short-name} WebUI
+=== Edit a Software Matrix
+To edit a software matrix the {app-short-name} REST API:
+
+. send a PATCH request to the following URL
+link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]
++
+Path Variable::
++
+* *SOFTWARE_MATRIX_NAME*: It is the string that identifies the software matrix.
++
+Body::
+The request body must contain only the fields that wants to be modified
++
+For example:: A PATCH request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/software-matrices/SWMatrix1
++
+[source, json]
+----
+{
+    "name" : "",
+    "target-solution-type" : "device-ont",
+    "target-solution-info" : [
+    {
+        "hardware-type": "LS-MF-LMNT-B",
+        "target-software": {
+        "swFileFullPath": "default-https:multi-board-package/MF2/MF2",
+        "display": "MF2"
+        },
+        "device-family": "composite-device",
+        "support-offline-migration": true,
+        "device-version": "25.9",
+        "target-onu-software-mapping": [],
+        "target-release": {
+        "swFileFullPath": "default-https:onu-software/R26.04.00/R26.04.00",
+        "display": "R26.04.00"
+        }
+    }
+        ]
+    }
+----
 
 [NOTE]
 ====
-The Web UI is not available in this initial release
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
 ====
+
+== Using the {app-short-name} WebUI
+
+=== Create Software Matrix
+To create a software matrix using the {app-short-name} WebUI you must execute the following steps:
+
+. Click the "SOFTWARE MATRIX" option on the menu bar displayed on top of the screen.
++
+image::SOFTWAREMATRIX_menu.png[align="center"]
+
+. All software matrices will be listed:
++
+image::SOFTWAREMATRIXSection.png[align="center"]
+
+. Click the *Add matrix* button.
++
+image::SOFTWAREMATRIXSection_newButton.png[align="center"]
+
+. Enter the required data in the popup window.
++
+image::SOFTWAREMATRIXSection_createSOFTWAREMATRIX.png[align="left"]
+
+. Enter all required values:
++
+- *Name:* It is the software matrix name.
+- *Type:* It is the type of the software matrix. Allowed values are: "Devices Only", "Devices and ONTs" and "ONTs only"
+- *Device Configuration*: At least one device configuration must be added to define the software version and packages to be used by device types.
+. Click the *SAVE* button.
+
+
+=== Edit Software Matrix
+To edit a software matrix using the {app-short-name} WebUI you must execute the following steps:
+
+. Click the "SOFTWARE MATRIX" option on the menu bar displayed on top of the screen.
++
+image::SOFTWAREMATRIX_menu.png[align="center"]
+
+. All software matrices will be listed:
++
+image::SOFTWAREMATRIXSection.png[align="center"]
+
+. Locate the software matrix to be modified and click the *Edit* button on the row.
++
+image::SOFTWAREMATRIXSection_editButton.png[align="center"]
+
+. Enter the required data in the popup window.
++
+image::SOFTWAREMATRIXSection_createSOFTWAREMATRIX.png[align="left"]
+
+. The values that can be updated are:
++
+- *Type:* It is the type of the software matrix. Allowed values are: "Devices Only", "Devices and ONTs" and "ONTs only"
+- *Device Configuration*: At least one device configuration must be added to define the software version and packages to be used by device types.
+. Click the *SAVE* button.
+
+
+=== Delete Software Matrix
+To delete a software matrix using the {app-short-name} WebUI you must execute the following steps:
+
+. Click the "SOFTWARE MATRIX" option on the menu bar displayed on top of the screen.
++
+image::SOFTWAREMATRIX_menu.png[align="center"]
+
+. All SOFTWARE MATRICES will be listed:
++
+image::SOFTWAREMATRIXSection.png[align="center"]
+
+. Locate the software matrix to be deleted and click the *Delete* icon in the specific row.
++
+image::SOFTWAREMATRIX_deleteButton.png[align="center"]
 
 include::ROOT:go-back-component.adoc[Back]

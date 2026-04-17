@@ -12,11 +12,19 @@ altiplano user credentials.
 == How to Authenticate
 
 === Authenticating to Web UI
+To authenticate to the UI the user must previously exist in keycloak.
+If you do not have one please create an Altiplano admin user on Altiplano's keycloak
 
-[NOTE]
-====
-The Web UI is not available in this initial release
-====
+To use the {app-short-name} through the WebUI you must:
+
+. Access the {app-short-name} WebUI using the following URL: +
+link:https://{altiplano-host}/{wnp-web-context}[https://{altiplano-host}/{accm-web-context},window=_blank]
++
+For example:: https://{ip-host-example}/{accm-web-context}/
+
+. Log in to {app-short-name} using a specific username and password.
++
+image::accmLogin.png[align="center"]
 
 === Authenticating to the REST APIs
 To authenticate in order to use ACCM REST APIs an access token is needed.
