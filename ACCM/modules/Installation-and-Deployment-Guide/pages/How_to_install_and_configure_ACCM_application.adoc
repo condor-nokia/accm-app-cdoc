@@ -641,6 +641,9 @@ To check all the required {app-short-name} pods and services are up and running,
 $ kubectl get pods,svc -n nokia | grep cm
 ----
 
+For example:
+[source, bash]
+----
 * Sample output of the command (it must show the following pods and services in "Running" state)
 [source, bash, subs=attributes]
 ----
