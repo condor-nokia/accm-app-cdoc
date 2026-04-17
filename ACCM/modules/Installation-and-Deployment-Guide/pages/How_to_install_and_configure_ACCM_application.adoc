@@ -563,7 +563,7 @@ This section allows setting specific {app-short-name} configuration used by the 
 |String
 
 |ACTIVITY_ACTIVE_WAIT_ENABLED
-|Flag to enable/disable the active wait for activities
+|Flag to enable/disable the active wait for activities. If it is true then polling is used to detect when an activity changes state. This mechanism can be used if Kafka notifications are not working and the older polling mechanism is desired.
 |Yes
 |"false"
 |Boolean

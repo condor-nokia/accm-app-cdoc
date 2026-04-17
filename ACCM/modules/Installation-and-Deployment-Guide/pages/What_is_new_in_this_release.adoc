@@ -6,9 +6,13 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 * UI was developed and allows to manage Software matrix and campaigns
 
+* Control and recovery actions were added to the API and the UI (manual start, cancel, retry)
+
+* Progress of the campaign and activities can now be retrieved by API and UI
+
 * Authentication was added to the UI supporting only users with Altiplano admin role.
 
-* Kafka notification support was added to update activity/campaign statuses.
+* Kafka notification support was added to update campaign statuses.
 
 * Fixes to bugs reported by Nokia after testing the first release with fixes of the {app-full-name} application.
 
