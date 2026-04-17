@@ -165,16 +165,20 @@ Path Variable::
 * *CAMPAIGN_NAME*: It is the string that identifies the software matrix.
 +
 Body::
-The request body must contain only the fields that wants to be modified
+The request body must contain the fields that wants to be modified
 +
 For example:: A PUT request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaigns/campaign1
 +
 [source, json]
 ----
 {
+    "softwareMatrixName": "atp-st1-swm-device",
+    "downloadDate": "2026-04-17T12:00:00.000Z",
+    "updateDate": "2026-04-17T13:00:00.000Z",
     "clusters" : [
         {
-            "clusterName": "NewClusterName"
+            "clusterName": "LSN-FX16.2MF2",
+            "excludedElements": ["Subtended-MF22"]
         }
     ]
 }
