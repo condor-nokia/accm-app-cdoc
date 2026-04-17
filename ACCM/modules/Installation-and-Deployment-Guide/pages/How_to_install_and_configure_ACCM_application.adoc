@@ -73,7 +73,7 @@ aws ecr get-login-password --region us-east-1 --profile registry-client \
 
 [source,bash]
 ----
-helm pull oci://288739758763.dkr.ecr.us-east-1.amazonaws.com/altiplano-cm --version 26.1.0-MAIN-XXXX
+helm pull oci://288739758763.dkr.ecr.us-east-1.amazonaws.com/altiplano-cm --version 26.3.0-MAIN-0005
 ----
 
 [NOTE]
