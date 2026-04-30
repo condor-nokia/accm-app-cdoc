@@ -6,7 +6,7 @@ This section provides information related to the troubleshooting of the {app-ful
 
 == Rollback previous version
 
-If there is need to rollback to previous version the following command can be used:
+To roll back to the previous version, execute the following command:
 
 .Usage
 [source, bash]
@@ -16,7 +16,7 @@ helm rollback RELEASE_NAME [REVISION]
 
 [IMPORTANT]
 ====
-This operation does not rollback the database. If you are rolling back to a {app-short-name} version with differences in the DB structure, a backup/restore process on the {app-short-name} DB might be necessary for restory full {app-short-name} funtionalities.
+This operation does not rollback the database. If you are rolling back to a {app-short-name} version with differences in the DB structure, a backup/restore process on the {app-short-name} DB might be necessary for restory full {app-short-name} functionalities.
 ====
 
 .Example, if we want to rollback after install revision 2 we can execute:
@@ -28,8 +28,7 @@ helm rollback altiplano-cm 1
 
 == Uninstall
 
-If there is need to uninstall {app-short-name}
-execute the "helm uninstall" command:
+To uninstall {app-short-name}, execute the "helm uninstall" command:
 
 .Usage
 [source, bash]
