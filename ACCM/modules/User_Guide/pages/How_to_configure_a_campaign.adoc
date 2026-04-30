@@ -4,20 +4,20 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 == Introduction
 
-This section provides the steps needed to manage the campaigns in the {app-short-name}.
+This section provides the steps required to manage the campaigns in the {app-short-name}.
 
 {app-short-name} offers a REST Interface and a WebUI interface for the operator in order to configure the application.
 
 [NOTE]
 ====
-Before managing campaigns you must be authenticated to the {app-short-name} as an altiplano user.
+Before managing campaigns, you must be authenticated to the {app-short-name} as an altiplano user.
 Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
 
 == Using the REST API
 
 === Create Campaign
-To create a campaign using the {app-short-name} REST API you must execute the following step:
+To create a campaign using the {app-short-name} REST API, you must execute the following step:
 
 . Send a POST request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/campaigns[https://{altiplano-host}/{accm-api-context}/campaigns,window=_blank]
@@ -113,7 +113,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 ====
 
 === Delete Campaign
-To delete a campaign using the {app-short-name} REST API you must execute the following step:
+To delete a campaign using the {app-short-name} REST API, you must execute the following step:
 
 . Send a DELETE request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>[https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>,window=_blank]
@@ -134,7 +134,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 ====
 
 === Get Campaign
-To get a campaign using the {app-short-name} REST API you must execute the following step:
+To get a campaign using the {app-short-name} REST API, you must execute the following step:
 
 . Send a GET request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>[https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>,window=_blank]
@@ -155,9 +155,9 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 ====
 
 === Edit a Campaign
-To edit a campaign using the {app-short-name} REST API:
+To edit a campaign using the {app-short-name} REST API, you must execute the following step:
 
-. send a PUT request to the following URL
+. Send a PUT request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>[https://{altiplano-host}/{accm-api-context}/campaigns/<CAMPAIGN_NAME>,window=_blank]
 +
 Path Variable::
@@ -194,7 +194,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 == Using the {app-short-name} WebUI
 
 === Create Campaign
-To create a campaign using the {app-short-name} WebUI you must execute the following steps:
+To create a campaign using the {app-short-name} WebUI, you must execute the following steps:
 
 . Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen.
 +
@@ -221,7 +221,7 @@ image::CAMPAIGNSSection_createCAMPAIGNS.png[align="left"]
 
 
 === Edit Campaign
-To edit a campaign using the {app-short-name} WebUI you must execute the following steps:
+To edit a campaign using the {app-short-name} WebUI, you must execute the following steps:
 
 . Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen.
 +
@@ -247,7 +247,7 @@ image::CAMPAIGNSSection_updateCAMPAIGN.png[align="left"]
 . Click the *SAVE* button.
 
 === Delete Campaign
-To delete a campaign using the {app-short-name} WebUI you must execute the following steps:
+To delete a campaign using the {app-short-name} WebUI, you must execute the following steps:
 
 . Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen.
 +
