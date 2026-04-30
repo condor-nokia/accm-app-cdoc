@@ -11,4 +11,4 @@
 ** xref:How_to_use_ACCM.adoc[How to Use {app-short-name}]
 *** xref:How_to_configure_a_software_matrix.adoc[How to Configure Software Matrices (target solutions)]
 *** xref:How_to_configure_a_campaign.adoc[How to Configure Campaigns]
-*** xref:How_to_control_campaign_execution.adoc[How to control Campaigns execution]
+*** xref:How_to_control_campaign_execution.adoc[How to Control Campaigns Execution]
