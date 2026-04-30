@@ -4,11 +4,11 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 * Software matrix and campaigns now supports update operations.
 
-* UI was developed and allows to manage Software matrix and campaigns
+* UI was developed and allows to manage Software matrix and campaigns.
 
-* Control and recovery actions were added to the API and the UI (manual start, cancel, retry)
+* Control and recovery actions were added to the API and the UI (manual start, cancel, retry).
 
-* Progress of the campaign and activities can now be retrieved by API and UI
+* Progress of the campaign and activities can now be retrieved by API and UI.
 
 * Authentication was added to the UI supporting only users with Altiplano admin role.
 

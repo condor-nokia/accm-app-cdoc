@@ -2,10 +2,10 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 = Purpose of this guide
 
-This guide will help you to setup and use the {app-full-name}, and to explore its various capabilities.
+This guide will helps you to setup and use the {app-full-name}, and explore its various capabilities.
 
-First section of this guide provides information and describes the steps needed to install the {app-full-name} to run on top of {main-base-app}’s solution.
+Installation and Configuration section provides information and outlines the steps required to install the {app-full-name} on top of {main-base-app}’s solution.
 
-Second section of this guide contains essential information to use {app-full-name}.
+User Guide section covers essential information for using the {app-full-name}.
 
 include::ROOT:go-back-component.adoc[Back]
