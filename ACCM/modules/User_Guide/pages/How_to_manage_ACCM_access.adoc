@@ -6,14 +6,14 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 This section provides the steps required to authenticate to the {app-short-name}.
 
-To execute any operation on {app-short-name} you must be previously authenticated using
+To perform any operation on the {app-short-name}, you must be previously authenticated using
 altiplano user credentials.
 
 == How to Authenticate
 
 === Authenticating to Web UI
-To authenticate to the UI the user must previously exist in keycloak.
-If you do not have one please create an Altiplano admin user on Altiplano's keycloak
+To authenticate to the UI the user must previously exist in Keycloak.
+If you do not have an account, create an {main-base-app} admin user in {main-base-app}’s Keycloak.
 
 To use the {app-short-name} through the WebUI you must:
 
@@ -27,12 +27,12 @@ For example:: https://{ip-host-example}/{accm-web-context}/
 image::accmLogin.png[align="center"]
 
 === Authenticating to the REST APIs
-To authenticate in order to use ACCM REST APIs an access token is needed.
+To authenticate and use {app-short-name} REST APIs, an access token is required.
 
 [NOTE]
 ====
-The generated access token must be used in the HTTP header as a Bearer authentication header when executing
-any of {app-short-name} operations through the {app-short-name} REST APIs
+The generated access token must be included in the HTTP header as a Bearer authentication header when executing
+any {app-short-name} operation through the {app-short-name} REST APIs.
 ====
 
 ==== Authenticating as an altiplano admin
