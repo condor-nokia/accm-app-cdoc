@@ -10,5 +10,6 @@ To manage them, perform the following actions:
 
 . xref:How_to_configure_a_software_matrix.adoc[Configure Software Matrices]
 . xref:How_to_configure_a_campaign.adoc[Configure Campaigns]
+. xref:How_to_control_campaign_execution.adoc[How to control Campaigns execution]
 
 include::ROOT:go-back-component.adoc[Back]

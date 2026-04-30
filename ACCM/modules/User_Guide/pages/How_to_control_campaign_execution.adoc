@@ -1,0 +1,199 @@
+include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
+
+= How to control Campaigns execution
+
+== Introduction
+
+//TODO: (lchivel) COMPLETAR INTRODUCCION
+
+[NOTE]
+====
+Before managing campaigns, you must be authenticated to the {app-short-name} as an altiplano user.
+Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
+====
+
+== Using the REST API
+
+=== Manual start
+To manually start a campaign using the {app-short-name} REST API, you must execute the following step:
+
+. Send a POST request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/manual-start[https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/manual-start,window=_blank]
++
+Path Variable::
++
+* *CAMPAIGN_NAME*: It is the string that identifies the campaign.
++
+Body::
++
+The request must contain the following JSON body:
++
+For example:: A POST request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaign-manager-api/campaigns/campaign1/manual-start
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+=== Cancel
+To cancel a campaign using the {app-short-name} REST API, you must execute the following step:
+
+. Send a CANCEL request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/cancel[https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/cancel,window=_blank]
++
+Path Variable::
++
+* *CAMPAIGN_NAME*: It is the string that identifies the campaign.
++
+Body::
++
+The request must contain the following JSON body:
++
+For example:: A CANCEL request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaign-manager-api/campaigns/campaign1/cancel
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+=== Retry
+To retry a campaign using the {app-short-name} REST API, you must execute the following step:
+
+. Send a POST request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/retry[https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/retry,window=_blank]
++
+Path Variable::
++
+* *CAMPAIGN_NAME*: It is the string that identifies the campaign.
++
+Body::
++
+The request must contain the following JSON body:
++
+For example:: A POST request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaign-manager-api/campaigns/campaign1/retry
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+=== Rollback
+To rollback a campaign using the {app-short-name} REST API, you must execute the following step:
+
+. Send a POST request to the following URL:
+link:https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/clusters/<CLUSTER_NAME>/elements/<ELEMENT_NAME>/rollback[https://{altiplano-host}/{accm-api-context}/campaign-manager-api/campaigns/<CAMPAIGN_NAME>/clusters/<CLUSTER_NAME>/elements/<ELEMENT_NAME>/rollback,window=_blank]
++
+Path Variable::
++
+* *CAMPAIGN_NAME*: It is the string that identifies the campaign.
+* *CLUSTER_NAME*: It is the string that identifies the cluster.
+* *ELEMENT_NAME*: It is the string that identifies the element to be rolled back.
++
+Body::
++
+The request must contain the following JSON body:
++
+For example:: A POST request must be sent to the following URL: https://{ip-host-example}/{accm-api-context}/campaign-manager-api/campaigns/campaign1/clusters/LSN/elements/Condor_Spine1/rollback
+
+[NOTE]
+====
+The access token of the user must be sent in the request as a Bearer Authorization HTTP Header.
+To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc[REST APIs] section.
+====
+
+== Using the {app-short-name} WebUI
+
+=== Manual start
+To manually start a campaign using the {app-short-name} WebUI, you must execute the following steps:
+
+. Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen:
++
+image::CAMPAIGNS_menu.png[align="center"]
+
+. All the campaigns will be listed:
++
+image::CAMPAIGNS_menuSection.png[align="center"]
+
+. Locate the campaign to start and click the Manual Start button on the row. Please note that the Manual Start option is only available for NotScheduled campaigns:
++
+image::CAMPAIGNSSection_notScheduled.png[align="center"]
+
+. Confirm the action:
++
+image::CAMPAIGNSSection_confirmManualStartAction.png[align="center"]
+
+=== Cancel
+To cancel a campaign using the {app-short-name} WebUI, you must execute the following steps:
+
+. Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen:
++
+image::CAMPAIGNS_menu.png[align="center"]
+
+. All the campaigns will be listed:
++
+image::CAMPAIGNS_menuSection.png[align="center"]
+
+. Locate the campaign to cancel and click the Cancel button on the row. Please note that the Cancel option is only available for Executing or Executing Rollback campaigns:
++
+image::CAMPAIGNSSection_executing.png[align="center"]
+
+. Confirm the action:
++
+image::CAMPAIGNSSection_confirmCancelAction.png[align="center"]
+
+=== Retry
+To retry a campaign using the {app-short-name} WebUI, you must execute the following steps:
+
+. Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen:
++
+image::CAMPAIGNS_menu.png[align="center"]
+
+. All the campaigns will be listed:
++
+image::CAMPAIGNS_menuSection.png[align="center"]
+
+. Locate the campaign to retry and click the Retry button on the row. Please note that the Retry option is only available for Error, Rollback Error or Cancelled campaigns:
++
+image::CAMPAIGNSSection_error.png[align="center"]
+
+. Confirm the action:
++
+image::CAMPAIGNSSection_confirmRetryAction.png[align="center"]
+
+=== Rollback
+To rollback an element (device or ONT) using the {app-short-name} WebUI, you must execute the following steps:
+
+. Click the "CAMPAIGNS" option on the menu bar displayed on top of the screen:
++
+image::CAMPAIGNS_menu.png[align="center"]
+
+. All the campaigns will be listed:
++
+image::CAMPAIGNS_menuSection.png[align="center"]
+
+. Locate the campaign that contains the element to rollback, and click the Detail button on the row:
++
+image::CAMPAIGNSSection_detail.png[align="center"]
+
+. All the clusters for the campaign will be listed:
++
+image::CAMPAIGNSSection_clusters.png[align="center"]
+
+. Locate the cluster that contains the element to rollback, and click the Details button on the row:
++
+image::CAMPAIGNSSection_detail.png[align="center"]
+
+. The list of elements for the cluster will be listed:
++
+image::CAMPAIGNSSection_clusterElements.png[align="center"]
+
+. Locate the element to rollback and click the rollback button:
++
+image::CAMPAIGNSSection_detail.png[align="center"]
+
+. Confirm the action:
++
+image::CAMPAIGNSSection_confirmRollbackAction.png[align="center"]
