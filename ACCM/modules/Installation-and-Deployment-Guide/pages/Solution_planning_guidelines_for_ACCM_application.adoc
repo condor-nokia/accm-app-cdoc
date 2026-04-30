@@ -15,7 +15,7 @@ Altiplano Access Controller product and need to plan the deployment of an Altipl
 As {app-full-name} App operates on top of the Altiplano Access Controller, this section will provide details that are specific to the
 {app-full-name} Application that is required over and above the requirements for Altiplano Access Controller.
 For more details on Access Controller Solution Deployment, refer to the section "Altiplano Solution Deployment Overview" in
-the _Solution Planning Guide for Nokia Altiplano Access Controller and FastMile Controller_.
+the _Nokia Altiplano Access Controller and FWA Controller Solution Planning Guide_.
 
 === Compatibility
 
@@ -27,7 +27,7 @@ the _Solution Planning Guide for Nokia Altiplano Access Controller and FastMile 
 
 == Operating System Specifications
 
-Server and Client Software Requirements for {app-full-name} are the same as that of the Altiplano Access Controller.
+The server and client software requirements for {app-full-name} are the same as that of the {main-base-app} Access Controller.
 
 === Server Software Requirements
 
@@ -35,7 +35,7 @@ Server and Client Software Requirements for {app-full-name} are the same as that
 It is a microservices-based application that can be installed on the Kubernetes environment as a single-node or multi-node cluster setup.
 The server should also have container runtime and Helm installed in it.
 
-For the exact versions of Kubernetes, Helm, and Container runtime supported currently by Altiplano, refer to the "Getting started with Installation" section of the _Installation and Deployment Guide for Nokia Altiplano Access Controller and FastMile Controller_.
+For the exact versions of Kubernetes, Helm, and Container runtime supported currently by {main-base-app}, refer to the "Getting started with Installation" section of the _Nokia Altiplano Access Controller and FWA Controller Installation and Deployment Guide_.
 
 === Client Software Requirements
 
@@ -45,7 +45,7 @@ The client host requires any recent versions of the browser - Firefox or Chrome 
 //== CPU, Memory, and Hard disk Recommendations for {app-short-name} Deployment
 == Recommendations for ACCM Deployment
 
-Refer to the _Solution Planning Guide for Nokia Altiplano Access Controller and FastMile Controller_ for the dimensioning guidelines pertaining to Access Controller and its associated micro-services.
+Refer to the _Nokia Altiplano Access Controller and FWA Controller Solution Planning Guide_ for the dimensioning guidelines pertaining to Access Controller and its associated micro-services.
 
 The below tables provides *only* the additional CPU, memory, and disk requirement for micro-services relevant to {app-short-name} deployment.
 
@@ -71,11 +71,6 @@ The hardware requirements for {app-full-name} initial release installation are:
 | Kafka Listeners | 0,75 | 1 | 10
 | *TOTAL* | *2,25* | *2* | *10*
 |===
-
-[NOTE]
-====
-The resource tables below do not include the additional resources required to perform an application upgrade.
-====
 
 ////
 == Hard disk recommendations
