@@ -6,16 +6,16 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 == Overview
 
-Ensure that you have the required hardware and software resources on your Kubernetes host as explained in the
+Ensure that the required hardware and software resources on your Kubernetes host, as described in the
 "Getting started with Installation" section of the _Installation and Deployment Guide for Nokia Altiplano Access Controller and FastMile Controller Guide_.
-Also, check the xref:Solution_planning_guidelines_for_ACCM_application.adoc[Solution Planning Guidelines for {app-short-name} Application] to know the
-dimensioning needed to run {app-short-name} over {main-base-app}.
+Also, refer to the xref:Solution_planning_guidelines_for_ACCM_application.adoc[Solution Planning Guidelines for {app-short-name} Application] for the
+dimensioning needed to run {app-short-name} on top of {main-base-app}.
 
 [NOTE]
 ====
-. This documentation assumes that you are aware of the usage of Helm charts and therefore does not provide details on Helm commands.
+. This documentation assumes that you are familiar with the use of Helm charts and therefore does not provide details about Helm commands.
 
-. To perform the installation following skill set is required:
+. To perform the installation, following skill set is required:
 .. Knowledge of Kubernetes (K8s)
 .. Container runtimes
 .. Helm commands
@@ -24,20 +24,20 @@ dimensioning needed to run {app-short-name} over {main-base-app}.
 
 == Prerequisites
 
-. A database called {accm-dbname}, created on {main-base-app}’s MariaDB with the correct credentials. +
-With the {main-base-app}’s installations, the {accm-dbname} database and user should have been created.
-If the database or mariadb user does not exist refer to the xref:appendices/Configuring_Database.adoc[Configuring Database] section to know the steps needed.
+. A database called {accm-dbname}, must be created on {main-base-app}’s MariaDB with the correct credentials. +
+In standard {main-base-app} installations, the {accm-dbname} database and user should already be created.
+If the database or MariaDB user does not exist, refer to the xref:appendices/Configuring_Database.adoc[Configuring Database] section for the required steps.
 
 . A Helm chart must be downloaded. +
-Refer to the xref:_accm_helm_chart[{app-short-name} Helm chart] section to know the steps needed.
+Refer to the xref:_accm_helm_chart[{app-short-name} Helm chart] section for the required steps.
 
 == {app-short-name} Helm chart
 
-In this initial release, the Helm chart is distributed by Condor to Nokia using an AWS repository.
-In future and official releases, Nokia will upload the helm chart to the Nokia Software Repository or to Nokia SWDP.
+In this initial release, the Helm chart is distributed by Condor to Nokia through an AWS repository.
+In future and official releases, Nokia will upload the Helm chart to the Nokia Software Repository or to Nokia SWDP.
 
-To download the sample Helm chart from the *AWS* the server requires internet access.
-The procedure to download the helm charts is given below.
+To download the sample Helm chart from the *AWS*, the server requires internet access.
+The procedure for downloading the Helm chart is given below.
 
 === Download the helm chart from the Condor AWS repository
 To download the helm chart from Condor AWS repository, the following steps must be executed:
@@ -78,23 +78,22 @@ helm pull oci://288739758763.dkr.ecr.us-east-1.amazonaws.com/altiplano-cm --vers
 
 [NOTE]
 ====
-The steps to retrieve the token can be executed in any machine with internet access.
+The steps to retrieve the token can be executed on any machine with internet access.
 It does not have to be the same machine where the application will be installed.
 ====
 
 === Configuring Helm chart
 
-When installing the {app-short-name}, configuration from the *values.yaml* file inside the chart release is used.
-This file allows setting configurations needed by the {app-full-name} to function properly.
-
-The different available configuration sections are explained below:
+When installing the {app-short-name}, configuration in the *values.yaml* file included in the chart release is used.
+This file allows you to define the configurations required for the {app-full-name} to function properly.
+The different available configuration sections are explained below.
 
 ==== imagePullSecrets
 
 Configuration is required when the images are downloaded from Condor AWS registry or any other private registry.
-Change to enabled=true and put in the “auth” attribute the proper login credentials that allows connection to the registry.
+Set enabled=true and provide the appropriate login credentials in the “auth” attribute the proper login credentials that to allow access connection to the registry.
 
-In case of Condor Registry the token to add to "auth" attribute can be retrieve executing the
+In the case of Condor registry, the token to be added to the "auth" attribute can be retrieved by executing the
 following steps:
 
 * Install "AWS Command Line Interface" if it is not installed yet
@@ -601,7 +600,7 @@ The {app-short-name} exposes different interfaces. Default path values for those
 * */campaign-manager-api:* It is the url used to access the REST API that allows to manage campaigns in the {app-short-name}.
 * */campaign-manager-webapp:* It is the url used to access the Web UI.
 
-To get more information about the interfaces exposed by {app-short-name}, refer to
+For more details about the interfaces exposed by {app-short-name}, refer to
 xref:Installation-and-Deployment-Guide:appendices/ACCM_Exposed_Interfaces.adoc[{app-short-name} Exposed Interfaces] section.
 
 ==== {app-short-name} Provisioning (Web + Controller) module Configuration
@@ -610,21 +609,21 @@ This section allows configuring the image that must be downloaded to install the
 
 === Installing Helm chart
 
-Before executing the installation command make sure that
+Before executing the installation command, ensure that:
 
-- All the prerequisites were met. Refer to the xref:_prerequisites[Prerequisites] section.
-- The correct values were configured at the *values.yaml* file. To know more details about this configuration, refer to the xref:_configuring_helm_chart[Configuring Helm chart] section.
-- At least the following values have been configured:
-* *ALTIPLANO_SERVER:* {main-base-app} IP or Hostname that the {app-short-name} uses to call the Altiplano's available services. This value must be also used to access {app-short-name}
+- All the prerequisites are met. Refer to the xref:_prerequisites[Prerequisites] section.
+- The correct values are configured at the *values.yaml* file. For more details about this configuration, refer to the xref:_configuring_helm_chart[Configuring Helm chart] section.
+- The following values have been configured:
+* *ALTIPLANO_SERVER:* The {main-base-app} IP or Hostname used by the {app-short-name} to access {main-base-app}’s available services. This same value must also be used to access the {app-short-name}.
 
-To install the application execute the following command:
+To install the application, execute the following command:
 
 [source, bash]
 ----
 $ helm install altiplano-cm ./
 ----
 
-For example if the chart was decompressed at /home/nokia-installer/altiplano-cm execute:
+For example, if the chart was decompressed at /home/nokia-installer/altiplano-cm execute the following command:
 
 [source, bash]
 ----
