@@ -4,7 +4,7 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 == Overview
 
-After the successful installation of the Nokia {main-base-app} {app-short-name} application, you must add a valid license to use the application. This section gives the details of license management in the {main-base-app} {app-short-name} application. For more details refer to the section "Licensing Altiplano application" in the _Installation and Deployment Guide for Nokia Altiplano Access Controller and FastMile Controller_.
+After the successful installation of the Nokia {main-base-app} {app-short-name} application, you must add a valid license to use the application. This section gives the details of license management in the {main-base-app} {app-short-name} application. For more details, refer to the section "Licensing Altiplano application" in the _Nokia Altiplano Access Controller and FWA Controller Installation and Deployment Guide_.
 
 == How to obtain a valid license?
 

@@ -4,5 +4,5 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 [NOTE]
 ====
-This section must be completed for the official release if needed.
+This section will be completed for the official release, if applicable.
 ====
