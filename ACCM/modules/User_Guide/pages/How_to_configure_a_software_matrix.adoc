@@ -4,20 +4,20 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 == Introduction
 
-This section provides the steps needed to manage the software matrices in the {app-short-name}.
+This section provides the steps required to manage the software matrices in the {app-short-name}.
 
-{app-short-name} offers a REST Interface and a WebUI for the operator in order to configure the application.
+{app-short-name} provides a REST Interface and a WebUI for operators to configure the application.
 
 [NOTE]
 ====
-Before managing software matrices you must be authenticated to the {app-short-name} as an altiplano user.
+Before managing software matrices, you must be authenticated to the {app-short-name} as an altiplano user.
 Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
 
 == Using the REST API
 
 === Create Software Matrix
-To create a software matrix using the {app-short-name} REST API you must execute the following step:
+To create a software matrix using the {app-short-name} REST API, you must execute the following step:
 
 . Send a POST request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/software-matrices[https://{altiplano-host}/{accm-api-context}/software-matrices,window=_blank]
@@ -87,7 +87,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 ====
 
 === Delete Software Matrix
-To delete a software matrix using the {app-short-name} REST API you must execute the following step:
+To delete a software matrix using the {app-short-name} REST API, you must execute the following step:
 
 . Send a DELETE request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]
@@ -109,7 +109,7 @@ To retrieve a token, follow the steps in the xref:How_to_manage_ACCM_access.adoc
 
 
 === Get Software Matrix
-To get a softwaree matrix using the {app-short-name} REST API you must execute the following step:
+To get a software matrix using the {app-short-name} REST API, you must execute the following step:
 
 . Send a GET request to the following URL:
 link:https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>[https://{altiplano-host}/{accm-api-context}/software-matrices/<SOFTWARE_MATRIX_NAME>,window=_blank]

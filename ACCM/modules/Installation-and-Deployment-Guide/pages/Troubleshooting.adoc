@@ -16,7 +16,7 @@ helm rollback RELEASE_NAME [REVISION]
 
 [IMPORTANT]
 ====
-This operation does not rollback the database. If you are rolling back to a {app-short-name} version with differences in the DB structure, a backup/restore process on the {app-short-name} DB might be necessary for restory full {app-short-name} functionalities.
+This operation does not rollback the database. If you are rolling back to a {app-short-name} version with differences in the DB structure, a backup/restore process on the {app-short-name} DB might be necessary for restoring full {app-short-name} functionalities.
 ====
 
 .Example, if we want to rollback after install revision 2 we can execute:
