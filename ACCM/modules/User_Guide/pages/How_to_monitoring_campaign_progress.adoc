@@ -131,20 +131,6 @@ For example:: A GET request must be sent to the following URL: https://{ip-host-
 | executionSteps | Array<ExecutionStepSchema> | List of steps (activities on Altiplano) and their status.
 |===
 
-===== ClusterSchema
-[cols="1,1,2", options="header"]
-|===
-| Attribute | Type | Description
-| target | string | Cluster name
-|===
-
-===== ClusterDeviceSchema
-[cols="1,1,2", options="header"]
-|===
-| Attribute | Type | Description
-| target | string | Device name
-|===
-
 ===== ClusterElementTypeProgress
 [cols="1,1,2", options="header"]
 |===
