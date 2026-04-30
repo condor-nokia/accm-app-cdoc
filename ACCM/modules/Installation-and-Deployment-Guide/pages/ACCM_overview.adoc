@@ -2,7 +2,7 @@ include::ROOT:conf/Configuration_properties.adoc[leveloffset=0]
 
 = What is Access Cluster Campaign Manager?
 
-The {app-full-name} ({app-short-name}) operates on top of {main-base-app}, and allows operators to define, schedule, and
+The {app-full-name} ({app-short-name}) operates on top of {main-base-app}, and enables operators to define, schedule, and
 monitor software update campaigns for network elements, in coordination with the Altiplano Software Management module.
 
 image::GeneralContextDiagram_RevA.png[align="center"]
