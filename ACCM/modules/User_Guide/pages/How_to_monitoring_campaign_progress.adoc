@@ -202,6 +202,7 @@ image::CAMPAIGNSSection_clusterDetails.png[align="center"]
 . In case of error, the cause is shown at cluster level, and every step has its own cause:
 +
 image::CAMPAIGNSSection_ClusterDetailsErrors.png[align="center"]
-
++
+image::CAMPAIGNSSection_ClusterDetailsErrors2.png[align="center"]
 
 include::ROOT:go-back-component.adoc[Back]

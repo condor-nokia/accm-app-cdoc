@@ -567,11 +567,41 @@ This section allows setting specific {app-short-name} configuration used by the 
 |"false"
 |Boolean
 
+|ACTIVITY_STATUS_NOTIFICATION_TIMEOUT_MINUTES
+|Time in minutes that the orchestrator waits for an activity status change notification to arrive from Altiplano. Once this time has elapsed, the campaign ends with a timeout error.
+|Yes
+|60
+|Integer
+
+|ACCM_KEYCLOAK_TOKEN_ACCEPTANCE_LEEWAY_SECONDS
+|Buffer used when validating token expiration to account for time differences between the Keycloak server and the application server.
+|Yes
+|10
+|Integer
+
+|CAMPAIGN_NAME_SEPARATOR_CHAR
+|Character used as a separator for parts in the campaign and activity naming scheme.
+|Yes
+|"_"
+|String(length: 1)
+
 |VALIDITY_WINDOW_ENABLED
 |Flag to enable/disable the validity window feature.
 |Yes
 |"true"
 |Boolean
+
+|ACTIVITY_SUFFIX_UPGRADE_ONT
+|Suffix to be added to the ONT upgrade activity.
+|Yes
+|"UPG_ONT"
+|String
+
+|CAMPAIGN_NAME_RESTRICTED_CHARS
+|Unsafe characters that are not allowed to be used in campaign names.
+|Yes
+|""
+|String
 
 |===
 
