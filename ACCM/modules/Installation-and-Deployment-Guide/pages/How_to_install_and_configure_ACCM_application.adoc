@@ -131,6 +131,14 @@ It does not have to be the same machine where the application will be installed.
 
 This section allows setting specific {app-short-name} configuration used by the {app-short-name} services.
 
+[IMPORTANT]
+====
+Complete at least the variables ALTIPLANO_SERVER and KEYCLOAK_PORTAL_SECRET since they do not have a default value.
+
+Also take into account the variable IBN_INTENT_FOR_CLUSTER since it refers to the intent type used for the cluster intents and must match
+for correct operation.
+====
+
 [width="100%",cols="20%,50%,10%,10%,10%",options="header"]
 |===
 |*Name* |*Description* |*Mandatory (Yes/No)* |*Default Value* |*Allowed Values*
@@ -140,6 +148,12 @@ This section allows setting specific {app-short-name} configuration used by the 
 |Yes
 |None
 |IP Address
+
+|KEYCLOAK_PORTAL_SECRET
+|ALTIPLANO client secret from keycloak. It must be copied from the keycloak configuration.
+|Yes
+|None
+|String
 
 |ALTIPLANO_BASE_URL
 |{main-base-app}’s Access controller REST API path. (There is no need to change default value except {main-base-app} changes the access controller REST API path)
@@ -151,6 +165,12 @@ This section allows setting specific {app-short-name} configuration used by the 
 |{main-base-app}’s OpenSearch REST API path. (There is no need to change default value except {main-base-app} changes the OpenSearch REST API path)
 |No
 |"/altiplano-indexsearch"
+|String
+
+|IBN_INTENT_FOR_CLUSTER
+|Intent type name used for the cluster instances.
+|Yes
+|"leaf-spine-network"
 |String
 
 |CP_LEAVES_BATCH_SIZE
@@ -469,12 +489,6 @@ This section allows setting specific {app-short-name} configuration used by the 
 |URL path for IBN topology and intents.
 |Yes
 |"/rest/restconf/data/ibn:ibn/intent="
-|String
-
-|IBN_INTENT_FOR_CLUSTER
-|Intent name used for the cluster.
-|Yes
-|"leaf-spine-network"
 |String
 
 |SW_MATRIX_API_PATH
