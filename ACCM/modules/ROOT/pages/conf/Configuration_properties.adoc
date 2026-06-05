@@ -1,5 +1,5 @@
 
-:release-month: 26.6
+:release-month: June
 :release-year: 2026
 :release-number: 26.6
 :prerelease-tag:
