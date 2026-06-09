@@ -205,4 +205,83 @@ image::CAMPAIGNSSection_ClusterDetailsErrors.png[align="center"]
 +
 image::CAMPAIGNSSection_ClusterDetailsErrors2.png[align="center"]
 
+== Statuses Overview
+Status tracking operates hierarchically: element statuses determine the overall cluster state, which in turn aggregates to define the overarching campaign lifecycle state.
+
+=== Campaign States
+The campaign status provides a high-level overview of the entire automated update process:
+
+* *Scheduled*: The campaign has been successfully defined and queued with specific future dates for software download and update execution.
+* *Not Scheduled*: The campaign has been saved into the system but does not have execution dates configured, requiring a manual trigger to start.
+* *Executing*: The campaign is actively running its orchestration workflows across the associated clusters.
+* *Success*: The software update has completed successfully across all elements in all targeted clusters.
+* *Executing Rollback*: The system is actively reverting one or more elements back to their previous software versions.
+* *Canceled*: An executing campaign was manually stopped by an operator, halting further updates.
+* *Error*: The execution failed during deployment (e.g., due to an activity failing on Altiplano, or some post-check verification).
+* *Rollback Error*: A failure occurred while trying to execute a software rollback on an element.
+* *Rolled back*: The rollback process has finished successfully, and the selected elements from one or more clusters have been reverted completely to their previous software version.
+
+image::CAMPAIGNSSection_campaignStates.png[align="center"]
+
+=== Cluster States
+Their statuses are calculated dynamically based on non-excluded components.
+
+* *Scheduled / Not Scheduled*: Inherited from the initial campaign state before orchestration begins.
+* *Executing*: The cluster is actively walking through its designated sequence of upgrade activities and automated post-check verifications.
+* *Success*: All eligible network elements within the cluster layer have been upgraded and verified successfully.
+* *Executing Rollback*: One or more elements within the cluster are currently undergoing a software rollback.
+* *Canceled*: The cluster orchestration was halted midway due to a campaign cancellation.
+* *Error*: The upgrade or a post-check verification failed for a specific device batch, halting the process for that entire cluster.
+* *Rollback Error*: A failure occurred while trying to execute a software rollback on an element.
+* *Rolled back*: The rollback process has finished successfully, and the selected elements have been reverted completely to their previous software version.
+
+image::CAMPAIGNSSection_clusterStates.png[align="center"]
+
+== REST Error Responses
+.Error response
+[source,json]
+----
+{
+  "timestamp": {isoDateTimestamp},
+  "operationName": {operationName},
+  "serviceName": {serviceName},
+  "errorCode": {errorCode},
+  "message": {message},
+  "detail": []
+}
+----
+
+=== ACCM-AC-0001
+
+==== HTTP error code
+500 Internal server error
+
+==== Message
+Internal error
+
+==== Description
+This error is thrown when any anomalous runtime situation occurs that was not contemplated. To avoid exposing an unhandled root cause, it is wrapped in a generic error of this type. The situations in which it is generated cannot be changed by the operator and need to be reported.
+
+=== ACCM-AC-0004
+
+==== HTTP error code
+401 Unauthorized
+
+==== Message
+Access token is not valid anymore
+
+==== Description
+When the authorization token is invalid and must be updated
+
+=== ACCM-AC-0011
+
+==== HTTP error code
+404 Not found
+
+==== Message
+Campaign \{campaignName} does not exist.
+
+==== Description
+When attempting to retrieve the campaign for update, detail, or action services, and it does not exist.
+
 include::ROOT:go-back-component.adoc[Back]

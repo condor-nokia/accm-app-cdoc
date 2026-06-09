@@ -10,6 +10,11 @@ This section provides the steps required to manage the software matrices in the 
 
 [NOTE]
 ====
+Since the Software Matrix module endpoints act as a proxy for Altiplano's Target Solutions endpoints, they utilize the same schemas. Their descriptions can be found at https://documentation.nokia.com/aces/htdocs/3JL-08002-BMAA-PNZZA/NBI_263/NBI/main/NBI/using-access-controller/SoftwareManagement.html[Nokia's documentation]
+====
+
+[NOTE]
+====
 Before managing software matrices, you must be authenticated to the {app-short-name} as an altiplano user.
 Refer to xref:User_Guide:How_to_manage_ACCM_access.adoc[How to Manage {app-short-name} access] section for more details.
 ====
@@ -243,5 +248,54 @@ image::SOFTWAREMATRIXSection.png[align="center"]
 . Locate the software matrix to be deleted and click the *Delete* icon in the specific row.
 +
 image::SOFTWAREMATRIX_deleteButton.png[align="center"]
+
+
+== REST Error Responses
+.Error response
+[source,json]
+----
+{
+  "timestamp": {isoDateTimestamp},
+  "operationName": {operationName},
+  "serviceName": {serviceName},
+  "errorCode": {errorCode},
+  "message": {message},
+  "detail": []
+}
+----
+
+=== ACCM-AC-0001
+
+==== HTTP error code
+500 Internal server error
+
+==== Message
+Internal error
+
+==== Description
+This error is thrown when any anomalous runtime situation occurs that was not contemplated. To avoid exposing an unhandled root cause, it is wrapped in a generic error of this type. The situations in which it is generated cannot be changed by the operator and need to be reported.
+
+=== ACCM-AC-0004
+
+==== HTTP error code
+401 Unauthorized
+
+==== Message
+Access token is not valid anymore
+
+==== Description
+When the authorization token is invalid and must be updated
+
+=== ACCM-AC-0005
+
+==== HTTP error code
+400 Bad Request
+
+==== Message
+Invalid software-matrix-type. Only types 'device-ont', 'ont', 'device' are allowed.
+
+==== Description
+When the software matrix being created or updated does not match the specified types.
+
 
 include::ROOT:go-back-component.adoc[Back]
